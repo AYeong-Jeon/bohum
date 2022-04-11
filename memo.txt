@@ -1,0 +1,280 @@
+-- 개인 정보 디테일 시퀀스
+
+drop sequence userDetails_seq;
+create sequence userDetails_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+
+-- 개인 정보 테이블
+
+id primary key               영어+숫자 10글자
+pw                  영어+숫자 ?글자
+이름                  ?글자
+주민번호(앞자리)               꼭6글자
+주민번호(뒷자리)               꼭7글자
+휴대폰번호1               010   꼭숫자3글자..?
+휴대번호2               0000   꼭숫자4글자?
+휴대번호3               0000   꼭숫자4글자?   아닐수있나??
+이메일                   양식 맞춰서?
+회원 타입(피보험자  관리자 보험사직원)      체크 피보험자,관리자,보험사직원
+회원 세부 정보(다른 테이블과 연결 될 것임 - )
+보험사(회사 시퀀스랑 연결)
+
+drop table members cascade constraints;
+create table members(
+   id varchar2(30) primary key,
+   password varchar2(40),
+   name varchar2(30),
+   regi_number1 number,
+   regi_number2 number,
+   phone1 number,
+   phone2 number,
+   phone3 number,
+   email1 varchar2(20),
+   email2 varchar2(30),
+   userState varchar2(20) default '일반'   check(userState in('일반','회사','관리자')),
+   userDetail number not null,
+   companyInfo number default 0
+);
+
+insert into members(id, password, name,userDetail ) 
+values('kim','1234','김경혜',userDetails_seq.nextval);
+
+commit;
+-- 유저 상제 정보 테이블
+
+DROP TABLE userDetails CASCADE CONSTRAINTS;
+create table userDetails(
+   num number primary key,
+   age number not null,
+   gender varchar2(30) not null,
+   job varchar2(30) not null,
+   salary number,
+   marriage varchar2(20) default '미혼' check(marriage  in('미혼','기혼')),   
+   height number,
+   weight number,
+   disease varchar2(100),
+   family_history varchar2(100)
+);
+
+-- 회사 정보 테이블
+
+drop sequence cinfo_seq;
+create sequence cinfo_seq
+	increment by 1
+	start with 1
+	nocache;
+
+회사 정보 테이블 
+
+회사 시퀀스
+회사명
+회사 로고(이미지 파일)
+회사 보험 (보험 시퀀스들)
+회사 관리자 아이디
+
+drop table cinfo cascade constraints;
+create table cinfo(
+   cnum number primary key,
+   cname varchar2(30) not null,
+   cregi_num number,
+   cimage varchar2(50),
+   cinsurance varchar2(100),
+   cadmin varchar2(30)
+);
+
+- 보험카테고리 테이블
+drop sequence insu_cateseq;
+create sequence insu_cateseq 
+	start with 1 
+	increment by 1 
+	nocache;
+
+보험 카테고리 테이블
+
+보험 카테고리 시퀀스
+보험 카테고리 이름
+
+drop table insu_cate cascade constraints;
+create table insu_cate(
+	num number unique,
+	category varchar2(50),
+	constraint parent_cate primary key(category)
+);
+
+--보험 시퀀스
+drop sequence insu_seq;
+create sequence insu_seq
+	minvalue 1
+	start with 1
+	nocache;
+
+insert into insu_cate values(1,'실비 보험');
+insert into insu_cate values(2,'암 보험');
+insert into insu_cate values(3,'건강 보험');
+insert into insu_cate values(4,'종신 보험');
+
+
+보험 정보 테이블
+
+보험 시퀀스 
+보험사
+보험 이름
+보험 카테고리(시퀀스로 연결, 꼭 있는지 확인) (암 신생아 어린이 종신)
+보험 타입 (갱신 비갱신)
+보험료(절대값 아님)
+가입 나이
+보험 기간
+납입 기간
+납입 주기
+주계약
+특약(시퀀스 연결)
+
+
+--보험정보 테이블
+drop table insu cascade constraints;
+create table insu(
+	insu number primary key,
+	insucompany varchar2(50),
+	insuname varchar2(100),
+	insucate varchar2(50),
+	insutype varchar2(20) default '갱신' check(insutype  in('갱신','비갱신')),
+	insuprice varchar2(100),
+	insuage varchar2(50),
+	insuper varchar2(50),
+	payper varchar2(30),
+	paycyc varchar2(20),
+	maincont varchar2(200),
+	spccont varchar2(30),
+	constraint child_cate foreign key(insucate) references insu_cate(category) on delete cascade
+);
+
+
+-- 공지사항 게시판 테이블
+drop sequence board_seq;
+create sequence board_seq
+	increment by 1
+  	start with 1
+  	minvalue 1
+  	maxvalue 10000
+  	nocache;
+
+공지사항 게시판 테이블
+
+공지사항 시퀀스
+게시판 제목
+게시판 내용
+조회수
+등록일
+
+drop table board cascade constraints;
+create table board(
+	bnum number primary key,
+	btitle varchar2(50) not null,
+	bcontents varchar2(200) not null,
+	bimage varchar2(30),
+	bdate date default sysdate
+);
+
+
+-- Q&A 게시판 테이블
+
+drop sequence qa_seq;
+create sequence qa_seq
+	increment by 1
+	start with 1
+	nocache;
+
+Q&A 게시판 테이블
+
+게시판 시퀀스
+게시판 카테고리(얘는 그냥 2개로 나누기!)
+작성자
+보험사
+게시판 제목
+게시판 내용
+ref
+re_step
+re_level
+파일
+비밀번호
+조회수
+등록일
+
+
+drop table qa_board  CASCADE CONSTRAINTS;
+create table qa_board(
+   no number not null primary key,
+   category varchar2(20) default '보험질문' check(category   in('보험질문','고객의소리','답변')),
+   title varchar2(60) not null,
+   writer varchar2(20) not null,
+   password varchar2(20) not null,
+   company varchar2(20) not null,
+   content varchar2(150) not null,
+   image varchar2(50),
+   readcount number default 0,
+   reg_date varchar2(20) default sysdate,
+   ref number not null,
+   re_step number default 0,
+   re_level number default 0,
+   ip varchar2(15) not null
+);
+
+
+--아래 sql문은 답글까지 insert 한 것
+	
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a1','a1','a1','1234','2015-1-1',1,0,0,'내용1','127.0.0.1');
+
+
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a2','a2','a2','1234','2015-1-1',2,0,0,'내용2','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a21','a2','a21','1234','2015-1-1',2,4,1,'내용21','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a22','a2','a22','1234','2015-1-1',2,1,1,'내용22','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a221','a2','a221','1234','2015-1-1',2,3,2,'내용221','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a222','a2','a222','1234','2015-1-1',2,2,2,'내용222','127.0.0.1');
+
+
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a3','a3','a3','1234','2015-1-1',7,0,0,'내용3','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a31','a3','a31','1234','2015-1-1',7,6,1,'내용31','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a311','a3','a311','1234','2015-1-1',7,7,2,'내용311','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a32','a3','a32','1234','2015-1-1',7,2,1,'내용32','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a321','a3','a321','1234','2015-1-1',7,5,2,'내용321','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a322','a3','a322','1234','2015-1-1',7,3,2,'내용322','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a3221','a3','a3221','1234','2015-1-1',7,4,3,'내용3221','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'a33','a3','a33','1234','2015-1-1',7,1,1,'내용33','127.0.0.1');
+
+insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
+values(qa_seq.nextval,'kim','a1','a1','1234','2015-1-1',1,0,0,'내용1','127.0.0.1');
+
+
+commit;
+

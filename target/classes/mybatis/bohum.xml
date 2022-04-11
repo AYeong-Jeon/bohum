@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="bohum.model.BohumBean">
+
+<insert id="Insert">
+	insert into insu(insu,insucompany,insuname,insucate,insutype,insuprice,insuage,insuper,payper,paycyc,maincont,spccont)
+	values(insu_seq.nextval,#{insucompany},#{insuname},#{insucate},#{insutype},#{insuprice},#{insuage},#{insuper},#{payper},#{paycyc},#{maincont},#{spccont})
+</insert>
+
+<select id="GetTotal" resultType="int">
+	select count(*) from insu
+	<if test="whatColumn=='bname'">
+		where insuname like #{keyword}
+	</if>
+	<if test="whatColumn=='bcate'">
+		where insucate like #{keyword}
+	</if>
+	order by insu desc
+</select>
+
+<select id="GetAll" resultType="myBohum">
+	select * from insu
+	<if test="whatColumn=='bname'">
+		where insuname like #{keyword}
+	</if>
+	<if test="whatColumn=='bcate'">
+		where insucate like #{keyword}
+	</if>
+	order by insu desc
+</select>
+
+
+</mapper>
