@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../common/common.jsp" %>
     
 <!doctype html>
 <html lang="ko">
@@ -41,10 +42,21 @@
           font-size: 3.5rem;
         }
       }
+      
+      a {
+	        text-decoration: none;
+	        color:black;
+	   }
     </style>
 	<script type="text/javascript">
 		function main(){
-			location.href="main.cp";
+			location.href="main.bh";
+		}
+		function logOut(){
+			location.href="logout.jsp";
+		}
+		function mine(){
+			location.href="companyUpdate.cp"
 		}
 	</script>
 	
@@ -60,18 +72,20 @@
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1">
       <!-- 로그인 하면 회원 이름 뜨도록 하기, 클릭하면 마이 페이지로 이동 -->
-        <a class="link-secondary" href="">회사 관리자</a>
+        <a class="link-secondary" href="myPage.mem">${loginCompany } : ${loginInfo.id}님</a>
       </div>
       <div class="col-4 text-center">
-        <h1 class="header-logo" onclick="main(this)">Select your 보험</h1>
+        <h1 class="header-logo" onclick="main(this)">Select your<br>보험</h1>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
-      <!-- 검색 아이콘 클릭하면 보험 검색하는 페이지로 -->
-        <a class="link-secondary" href="" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </a>
         <!-- 로그인 버튼 누르면 로그인폼으로 -->
-        <a class="btn btn-sm btn-outline-secondary" href="loginForm.bh">Login</a>
+      	<c:if test="${loginInfo.id==null }">
+        <a class="btn btn-sm btn-outline-secondary" controls autoplay muted onclick="login()">Login</a>
+	  	 </c:if>
+	  	 <c:if test="${loginInfo.id!=null }">
+        <a class="btn btn-sm btn-outline-secondary" controls autoplay muted onclick="mine()">회사 페이지</a>
+        <a class="btn btn-sm btn-outline-secondary" controls autoplay muted onclick="logOut()">LogOut</a>
+	  	 </c:if>
       </div>
     </div>
   </header>
@@ -79,9 +93,10 @@
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 link-secondary" href="insert.bh">보험 추가</a>
-      <a class="p-2 link-secondary" href="list.bh">보험 목록</a>
-      <a class="p-2 link-secondary" href="">가입요청 목록</a>
-      <a class="p-2 link-secondary" href="main.mb">회원 페이지</a>
+      <a class="p-2 link-secondary" href="list.bh?loginCompany=${loginCompany }">보험 목록</a>
+      <a class="p-2 link-secondary" href="list.hm?loginCompany=${loginCompany }">관심회원 목록</a>
+      <a class="p-2 link-secondary" href="list.qa">고객센터</a>
+      <a class="p-2 link-secondary" href="main.mem">회원 페이지</a>
     </nav>
   </div>
 </div>

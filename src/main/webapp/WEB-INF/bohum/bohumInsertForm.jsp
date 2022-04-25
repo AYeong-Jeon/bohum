@@ -47,27 +47,36 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">보험 회사</label>
-              <input type="text" class="form-control" id="firstName" name="insucompany" placeholder="로그인한 회사 이름" readonly="readonly">
+              <input type="text" class="form-control" id="firstName" name="insucompany" placeholder="${loginCompany }" readonly="readonly" value="${loginCompany }">
               <div class="invalid-feedback">
                 Valid insucompany is required.
               </div>
             </div>
 
-            <div class="col-12">
-              <label for="username" class="form-label">보험 상품명</label>
-              <div class="input-group has-validation">
-                <input type="text" class="form-control" id="insuname" name="insuname">
+            <div class="col-md-5">
+              <label for="country" class="form-label">보험 상품명</label>
+              <input type="text" class="form-control" id="insuname" name="insuname">
               <div class="invalid-feedback">
-                  Your insuname is required.
-                </div>
+                Please select a valid country.
               </div>
             </div>
 
+            <div class="col-md-5">
+              <label for="state" class="form-label">연결할 URL</label>
+              <input type="text" class="form-control" id="link" name="link">
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+			<br><br>
+
             <div class="col-12">
               <label for="email" class="form-label">보험 카테고리</label>
-             <select class="form-select" id="insucate" name="insucate">
+             <select class="form-select" id="insucate" name="category">
                 <option value="">선택하세요</option>
-                <option>암 보험</option>
+<c:forEach var="ic" items="${icate }">
+                <option value="${ic.category }">${ic.category }</option>
+</c:forEach>
               </select>
               <div class="invalid-feedback">
                 Please select a valid insucate.
@@ -78,6 +87,7 @@
               <label for="address" class="form-label">보험 타입</label><br>
               <input type="radio" name=insutype value="갱신">&nbsp;갱신&nbsp;&nbsp;
               <input type="radio" name=insutype value="비갱신">&nbsp;비갱신
+              <input type="radio" name=insutype value="기타">&nbsp;기타
               <div class="invalid-feedback">
                 Please enter your shipping insutype.
               </div>

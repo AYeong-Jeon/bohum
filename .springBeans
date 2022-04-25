@@ -10,9 +10,17 @@
 		<config>src/main/webapp/WEB-INF/spring/appServlet/bohum-context.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/company-context.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/member-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/listMem-servlet.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/qa_board-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/memberDetail-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/graph-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/homeAdmin-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/heartMember-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/heart-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/insucate-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
 	</autoconfigs>
 	<configSets>
