@@ -24,7 +24,7 @@
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="getInsuCompany.lm?cname=${cl.cname }" style="color: gray;">보험상품 보기</a></button>
+                  <button type="button" class="btn btn-outline-success"><a href="getInsuCompany.lm?cname=${cl.cname }" style="color: gray;">보험상품 보기</a></button>
                 </div>
                 <small class="text-muted">
 					<a href="${cl.clink }" style="color: gray;">보험사 페이지 이동</a>

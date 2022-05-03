@@ -4,12 +4,10 @@
 <%@ include file="top.jsp"%>
 
 <script>
-function delRight() { 
-   //alert($('input[name="cnum"]').val());
+function delRight(myBohumNum) { 
    var a=confirm("보험 상품을 삭제 하시겠습니까?");
    if (a == true){    //확인
-      location.href="companyDelete.cp?cnum="+$('input[name="cnum"]').val();
-      return true;
+      location.href="bohumDelete.bh?insu="+myBohumNum;
    }else{   //취소<td><a href="companyDelete.cp?cnum=${company.cnum }">삭제</a></td>
 
        return false;
@@ -32,9 +30,9 @@ function delRight() {
 <br>
 <div class="container">
 <form action="list.bh" method="get">
-	<input type="submit" class="btn btn-outline-success" value="검색" style="float: right; height: 30px;">
-	<input type="text" class="form-control" name="keyword" style="width:200px; height: 30px; float: right">
-	<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="whatColumn" style="width: 105px; float: right">
+	<input type="submit" class="btn btn-success" value="검색" style="float: right;">
+	<input type="text" class="form-control" name="keyword" style="width:200px; float: right">
+	<select class="form-select form-select" aria-label=".form-select-sm example" name="whatColumn" style="width: 150px; float: right">
 		<option value="all">전체 검색</option>
 		<option value="bname">보험명</option>
 		<option value="bcate">카테고리</option>
@@ -77,7 +75,7 @@ function delRight() {
       <td>${bh.spccont }</td>
       <td><a class="btn btn-sm" href="bohumUpdate.bh?insu=${bh.insu}">수정</a></td>
       <input type="hidden" name="cnum" value="${company.cnum }" readOnly>
-      <td><a onclick="delRight()" class="btn btn-sm" href="bohumDelete.bh?insu=${bh.insu}">삭제</a></td>
+      <td><a class="btn btn-sm" href="javascript:delRight('${bh.insu}')">삭제</a></td>
     </tr>
 </c:forEach>
   </tbody>

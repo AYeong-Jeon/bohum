@@ -4,6 +4,7 @@
 <%
 	String myMog = "모그";
 %>
+
 <div class="container">
 	<table class="table table-striped">
 		<tr class="table-light" style="width: 100%">
@@ -50,7 +51,7 @@
 	<c:set value="<%=myMog%>" var="myMog" />
 	<div class="row">
 		<div class="col-6">
-			<table class="table" style="display: inline;width: 100%">
+			<table class="table" style="display: inline; width: 100%">
 				<tr class="table-light">
 					<th>특약 종류</th>
 					<c:if test="${memberGender!='여자' }">
@@ -70,13 +71,17 @@
 					<tr>
 						<td>${bohumData.mog }</td>
 						<c:if test="${memberGender!='여자' }">
-							<td align="center">${bohumData.mlInsRt }원</td>
+							<td align="right"><fmt:formatNumber
+									value="${bohumData.mlInsRt }" groupingUsed="true" />원<br>
+							</td>
 							<c:set value="${totalPriceM+ bohumData.mlInsRt}"
 								var="totalPriceM" />
-							</c:if>
-						
+						</c:if>
+
 						<c:if test="${memberGender!='남자' }">
-							<td align="center">${bohumData.fmlInsRt }원</td>
+							<td align="right"><fmt:formatNumber
+									value="${bohumData.fmlInsRt }" groupingUsed="true" />원<br>
+							</td>
 							<c:set value="${totalPriceF+ bohumData.fmlInsRt}"
 								var="totalPriceF" />
 						</c:if>
@@ -86,10 +91,12 @@
 				<tr class="table-light">
 					<td>특약 전체 총 액</td>
 					<c:if test="${memberGender!='여자' }">
-						<td align="center">${totalPriceM }원</td>
+						<td align="right"><fmt:formatNumber value="${totalPriceM }"
+								groupingUsed="true" />원<br></td>
 					</c:if>
 					<c:if test="${memberGender!='남자' }">
-						<td align="center">${totalPriceF }원</td>
+						<td align="right"><fmt:formatNumber value="${totalPriceF }"
+								groupingUsed="true" />원<br></td>
 					</c:if>
 				</tr>
 			</table>
@@ -99,7 +106,7 @@
 			<div class="accordion accordion-flush" id="avgAgeNBohum">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="flush-headingOne">
-						<button class="accordion-button btn-secondary collapsed" 
+						<button class="accordion-button btn-secondary collapsed"
 							type="button" data-bs-toggle="collapse"
 							data-bs-target="#flush-collapseOne" aria-expanded="false"
 							aria-controls="flush-collapseOne">
@@ -133,26 +140,31 @@
 										</c:if>>
 										<td>${bohumData.mog }</td>
 										<c:if test="${memberGender!='여자' }">
-											<td align="center">${bohumData.mlInsRt }원</td>
+											<td align="right"><fmt:formatNumber
+													value="${bohumData.mlInsRt }" groupingUsed="true" />원<br>
+											</td>
 											<c:set value="${totalPriceM+ bohumData.mlInsRt}"
 												var="totalPriceM" />
 										</c:if>
-																		
+
 										<c:if test="${memberGender!='남자' }">
-											<td align="center">${bohumData.fmlInsRt }원</td>
+											<td align="right"><fmt:formatNumber
+													value="${bohumData.fmlInsRt }" groupingUsed="true" />원<br>
+											</td>
 											<c:set value="${totalPriceF+ bohumData.fmlInsRt}"
-											
 												var="totalPriceF" />
-										</c:if>								
+										</c:if>
 									</tr>
 								</c:forEach>
 								<tr class="table-active">
 									<td align="center">특약 전체 총 액</td>
 									<c:if test="${memberGender!='여자' }">
-										<td align="center">${totalPriceM }원</td>
+										<td align="right"><fmt:formatNumber value="${totalPriceM }"
+								groupingUsed="true" />원<br></td>
 									</c:if>
 									<c:if test="${memberGender!='남자' }">
-										<td align="center">${totalPriceF }원</td>
+										<td align="right"><fmt:formatNumber value="${totalPriceF }"
+								groupingUsed="true" />원<br></td>
 									</c:if>
 								</tr>
 							</table>
@@ -164,4 +176,3 @@
 	</div>
 </div>
 <%@ include file="/WEB-INF/member/bottom.jsp"%>
-

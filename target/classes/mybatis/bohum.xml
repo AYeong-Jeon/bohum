@@ -212,7 +212,7 @@
       select mog,age ,round(avg(mlInsRt)) as mlInsRt ,round(avg(fmlInsRt)) as fmlInsRt
         from bohum
       group by mog,age 
-        having age=20
+        having age=#{age}
    </select>
    
 <select id="GetInsuTotal" resultType="int">

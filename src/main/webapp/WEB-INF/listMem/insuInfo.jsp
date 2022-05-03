@@ -45,16 +45,17 @@
 <body class="bg-light">
 <div class="container">
 <form action="insuInfo.lm" method="get">
-	<input type="submit" class="btn btn-outline-success" value="검색" style="float: right; height: 30px;">
-	<input type="text" class="form-control" name="keyword" style="width:200px; height: 30px; float: right">
-	<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="whatColumn" style="width: 105px; float: right">
-		<option value="all">전체 검색</option>
-		<option value="bname">보험명</option> 
-		<option value="bcate">카테고리</option>
-	</select> 
+	<input type="submit" class="btn btn-success" value="검색" style="float: right;">
+	<input type="text" class="form-control" name="keyword" style="width:200px; float: right"> 
+	<select class="form-select form-select" aria-label=".form-select-sm example" name="whatColumn" style="width: 125px; float: right">
+      <option value="all">전체 검색</option>
+      <option value="bname">보험명</option> 
+      <option value="bcate">카테고리</option>
+   	</select> 
+	
 </form>
 <form action="add.ht" onSubmit="return add()">
-	 <button type="submit" class="btn btn-outline-danger" style="float: left; height: 30px" >
+	 <button type="submit" class="btn btn-danger" style="float: left;" >
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
   			<path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
 		</svg>     

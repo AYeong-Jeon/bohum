@@ -3,12 +3,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/member/top.jsp" %>
+<br><br>
 <style>
    .table{
-      width:80%
+      width:70%
    }
    .table table-hover{
-      width:80%
+      width:70%
    }
    a {
         text-decoration: none;
@@ -26,19 +27,19 @@
    }
 </script>
 <center>
-<div class="container">
+
 <form name="myform" action="list.qa" method="get">
       <table class="table">
          <tr>
             <td>
-               <select name="category" onchange="category_search()">
+               <select name="category" onchange="category_search()" class="form-select form-select" style="width: 140px;">
                   <option value="전체목록" <c:if test="${category=='전체목록' }">selected</c:if>>전체목록
                   <option value="보험질문" <c:if test="${category=='보험질문' }">selected</c:if>>보험질문
                   <option value="고객의소리"  <c:if test="${category=='고객의소리' }">selected</c:if>>고객의소리
                </select>
             </td>
             <td align="right">
-               <input type="button" value="글쓰기" onclick="location.href='insert.qa'" class="btn btn-outline-success">
+               <input type="button" value="글쓰기" onclick="location.href='insert.qa'" class="btn btn-success">
             </td>
          </tr>
       </table>
@@ -70,10 +71,7 @@
                   </c:if> <a
                   href="content.qa?no=${article.no}&pageNumber=${pageInfo.pageNumber}">[${article.category}]${article.title }</a>
 
-                  <c:if test="${article.readcount >= 10}">
-                     <img src="<%=request.getContextPath()%>/resources/qa_board/images/hot.gif"
-                        height="13">
-                  </c:if></td>
+                </td>
                <td align="center">${article.writer}</td>
                <td align="center">${article.company}</td>
                <td align="center">
@@ -88,6 +86,6 @@
       </table>
 
       <br> ${pageInfo.pagingHtml}
-  </div>
+
 </center>      
 <%@include file="/WEB-INF/member/bottom.jsp" %>

@@ -102,7 +102,8 @@ a {
         <a class="link-secondary" href="myPage.mem">"${loginInfo.id}"님</a>
       </div>
       <div class="col-4 text-center">
-        <h1 class="header-logo" onclick="main()">Select your<br>보험</h1>
+        <h1 class="header-logo" onclick="main()"><img src="<%=request.getContextPath() %>/resources/후보2.png" style="width: 300;height: 170">
+		</h1>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
       <!-- 검색 아이콘 클릭하면 보험 검색하는 페이지로 -->

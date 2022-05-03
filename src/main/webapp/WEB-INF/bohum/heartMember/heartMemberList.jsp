@@ -25,35 +25,13 @@
 						var yesterday4 = today.getDate() - 4;
 						var yesterday5 = today.getDate() - 5;
 						var yesterday6 = today.getDate() - 6;
-						//alert("today"+today.getDate());
-						//alert("yesterday1 : "+yesterday1);
-						//alert("yesterday2 : "+yesterday2);
 
 						var a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0;
 						var xlist = '${X_list}';
 						var ylist = '${Y_list}';
-						//alert(typeof(xlist));
-						//alert("ylist : "+typeof(ylist));
 						var xlistArr = xlist.split(',');
-						//alert("xlistArr : "+xlistArr);
-						//alert("xlistsub : "+ xlistArr[0].substring(9,11));
-						//alert("xlistsub : "+ xlistArr[1].substring(9,11));
-
-						/* for(var i=0; i< xlistArr.length ; i++){
-							xlistsub += xlistArr[i].substring(8,11);
-						} */
-
 						var ylistArr = ylist.split(',');
-						//alert("ylistArr : "+ylistArr);
-						//alert("ylistArr0 : "+ylistArr[0].substring(1));
-						//alert("ylistArr2 : "+ylistArr[2]);
-						//alert("xlistArrArrlength0 : "+xlistArr[0].indexOf(today.getDate()));
-						//alert("xlistArrtArrlength1 : "+xlistArr[1].indexOf(today.getDate()));
-						//alert("xlistArrArrlength2 : "+xlistArr[2].indexOf(today.getDate()));
-						//alert("xlistArrArrlength3 : "+xlistArr[3].indexOf(today.getDate()));
-						//alert("xlistArrArrlength : "+ylistArr.length);
 						for (var i = 0; i < xlistArr.length; i++) {
-							//alert("yesterday1 : "+yesterday1);
 							if (xlistArr[i].substring(9, 11) == today.getDate()) {
 								if (ylistArr[i] == ylistArr[0]) {
 									a = parseInt(ylistArr[0].substring(1));
@@ -113,7 +91,6 @@
 									data :
 									// y 축
 									[ g, f, e, d, c, b, a
-									/* 1,2,3,4,5,6,7 */
 									],
 									backgroundColor : [
 									//색상
@@ -188,13 +165,9 @@
 						var heartInsuName = '${heartInsuName}';
 						var heartInsuPersonx = '${heartInsuPersonx}';
 						var heartInsuPersony = '${heartInsuPersony}';
-						//alert("heartInsuName : "+heartInsuName);
-						//alert("heartInsuPersonx : "+heartInsuPersonx);
-						//alert("heartInsuPersony : "+heartInsuPersony);
 						heartInsuName = heartInsuName.substring(5);
 						heartInsuNameArr = heartInsuName.split(',');
 						
-						//색상 x축에 맞춰서 내보내기
 						backColorA = new Array();
 						borderColorA = new Array();
 						for(var i=0; i<heartInsuNameArr.length; i++){
@@ -208,16 +181,12 @@
 						heartInsuPersony = heartInsuPersony.substring(5);
 						heartInsuPersonxArr = heartInsuPersonx.split(',');
 						heartInsuPersonyArr = heartInsuPersony.split(',');
-						//alert('heartInsuPersonxArr : '+heartInsuPersonxArr.length);
-						//alert('heartInsuPersonyArr : '+heartInsuPersonyArr.length);
 						var heartInsuPersonArr = "";
 						for (var i = 0; i < heartInsuPersonxArr.length; i++) {
 							heartInsuPersonArr += parseInt(heartInsuPersonyArr[i])
 									+ ",";
 						}
-
 						heartInsuPersonArr2 = heartInsuPersonArr.split(',');
-						//alert('heartInsuPersonArr2 : '+heartInsuPersonArr2);
 						var context = document.getElementById('myChart2')
 								.getContext('2d');
 						var myChart2 = new Chart(context, {

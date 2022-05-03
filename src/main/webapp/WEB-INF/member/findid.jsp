@@ -81,7 +81,7 @@
 					<div class="mt-2">
 						<div class="form">
 							<label >주민등록번호</label> 
-						<div class="input-group inputbox"> <input type="text" class="form-control" placeholder="주민번호 앞자리" class="form-control" id="regi_number1" name="regi_number1"> <input type="text" class="form-control" placeholder="주민번호 뒷자리 " id="regi_number2" name="regi_number2" class="form-control"> </div>
+						<div class="input-group inputbox"> <input type="text" class="form-control" placeholder="주민번호 앞자리" class="form-control" id="regi_number1" name="regi_number1"> <input type="password" class="form-control" placeholder="주민번호 뒷자리 " id="regi_number2" name="regi_number2" class="form-control"> </div>
 						</div>
 					</div>
 
@@ -130,7 +130,7 @@
 					<div class="mt-2">
 						<div class="form">
 							<label>주민등록번호</label> 
-						<div class="input-group inputbox"> <input type="text" class="form-control" placeholder="주민번호 앞자리" class="form-control" name="regi_number1"> <input type="text" class="form-control" placeholder="주민번호 뒷자리 " name="regi_number2" class="form-control"> </div>
+						<div class="input-group inputbox"> <input type="text" class="form-control" placeholder="주민번호 앞자리" class="form-control" name="regi_number1"> <input type="password" class="form-control" placeholder="주민번호 뒷자리 " name="regi_number2" class="form-control"> </div>
 						</div>
 					</div>
 		

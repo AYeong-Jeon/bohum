@@ -289,7 +289,7 @@
       <td>${bh.category }</td>
       <td>${bh.insutype }</td>
       <%
-      String imgPath = request.getContextPath()+"/resources/";
+      String imgPath = request.getContextPath()+"/resources/insuprice/";
       %>
       <td><img src="<%=imgPath %>${bh.insuprice }" width="200" height="100"></td>
       <td>${bh.insuage }</td>

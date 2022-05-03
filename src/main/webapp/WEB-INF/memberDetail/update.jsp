@@ -251,7 +251,7 @@ $(function(){ // 혹시 j쿼리 없으 실 수 있음
          </div>
          <div class="form-group">
             <div class=" col-md-offset-3 col-md-6 ">
-               <button type="submit" class="form-control btn btn-primary">내
+               <button type="submit" class="form-control btn btn-success">내
                   정보 수정</button>
             </div>
          </div>

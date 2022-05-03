@@ -44,40 +44,32 @@ public class MemberUpdateConfirmController {
 			return loginPage; 
 		}
 			MemberBean bean = memberDao.getMember(loginInfo.getId());
-			System.out.println("bean1"+bean);
 			request.setAttribute("MemberBean", bean);
-			System.out.println("bean2"+bean);
-			
 			return getPage; 
 		
 	}
 	
-	//submitï¿½ê²¢ç”±ï¿½ ï¿½ë–†
 	@RequestMapping(value=command,method=RequestMethod.POST)
 	public String doAction(
 			MemberBean bean, 
 			HttpSession session,
 			BindingResult result,
-			HttpServletRequest request
+			HttpServletRequest request,
+			HttpServletResponse response
 			) {
-		
-		System.out.println("update2");
-		
 		if(result.hasErrors()) {
 			System.out.println("update3");
 			return getPage;
 		}
 		MemberBean mbean=memberDao.getMember(bean.getId());
-		System.out.println("pw2:"+bean.getPassword());
-		System.out.println("mpw2:"+mbean.getPassword());
 		request.setAttribute("MemberBean", bean);
-		
-		
+		Responsing responsing = new Responsing(response);
 		if(mbean.getPassword().equals(bean.getPassword())) { 
 			return gotoPage;
-		}
-		else { 
-			return getPage;
-		}
+			}else {
+				responsing.useAlert("ºñ¹Ð¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù");
+				responsing.useHistory(-1);
+			}
+		return gotoPage;
 	}
 }

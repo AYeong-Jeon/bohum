@@ -39,6 +39,13 @@ public class CompanyDao {
 		System.out.println("dao³¡");
 		return bean;
 	}
+	public CompanyBean getCompanyInfo2(int cnum) {
+		System.out.println("daoµµÂø");
+		CompanyBean bean=null;
+		bean=sqlSessionTemplate.selectOne(namespace+".CompanyInfo2",cnum);
+		System.out.println("dao³¡");
+		return bean;
+	}
 
 	public int updateCompany(CompanyBean bean) {
 		int cnt=-1;

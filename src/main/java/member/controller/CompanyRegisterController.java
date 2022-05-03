@@ -32,7 +32,7 @@ public class CompanyRegisterController {
 
 		return getPage;
 	}
-
+ 
 	//companyRegisterForm.jsp 추가하기 클릭
 	@RequestMapping(value=command, method=RequestMethod.POST)
 	public ModelAndView doAction(@ModelAttribute("member")

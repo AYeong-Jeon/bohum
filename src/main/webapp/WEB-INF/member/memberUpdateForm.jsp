@@ -108,18 +108,19 @@
 <form:form class="form-horizontal" commandName="member" method="post" action="memberUpdateForm.mem">
 	<fieldset id="myfield" >	
 	<input type="hidden" name="userState" id="userState" value="${MemberBean.userState }">
-	<input type="hidden" name="id" value="${MemberBean.id }" readOnly>
-
+<fmt:formatNumber var="formatPhone1" value="${MemberBean.phone1}" pattern="000"/>
+<fmt:formatNumber var="formatPhone2" value="${MemberBean.phone2}" pattern="0000"/>
+<fmt:formatNumber var="formatPhone3" value="${MemberBean.phone3}" pattern="0000"/>
 	<div class="col-md-6 mb-3 w-25">
       <label for="id">아이디</label><br>
        	<div class="controls">
-        	<input type="text" class="form-control" id="id" name="id" value="${MemberBean.id}" disabled="disabled"> 
+        	<input type="text" class="form-control" id="id" name="id" value="${MemberBean.id}" readonly="readonly"> 
       	</div>
  	</div>
 	<div class="form-row">
     	<div class="col-md-6 mb-3 w-25">
       		<label for="name">이름</label>
-      		<input type="text" class="form-control" id="name" name="name"  value="${MemberBean.name }" disabled="disabled">
+      		<input type="text" class="form-control" id="name" name="name"  value="${MemberBean.name }" readonly> 
    	 	</div>
 	</div>
 	
@@ -147,13 +148,13 @@
 	<div class="input-group">
    	<div class="col-md-3 mb-4 w-25">
       		<label for="regi_number1">주민등록번호</label>
-      		<input type="text" class="form-control" id="regi_number1" name="regi_number1" value="${MemberBean.regi_number1 }" disabled="disabled">
+      		<input type="text" class="form-control" id="regi_number1" name="regi_number1" value="${MemberBean.regi_number1 }" readonly> 
    			<form:errors cssClass="err" path="regi_number1" />
     	</div>
 
  	   	<div class="col-md-3 mb-4 w-25">
       		<label for="regi_number2">&nbsp</label>
-      		<input type="text" class="form-control" id="regi_number2" name="regi_number2" value="${MemberBean.regi_number2 }" disabled="disabled">
+      		<input type="password" class="form-control" id="regi_number2" name="regi_number2" value="${MemberBean.regi_number2 }" readonly> 
   			<form:errors cssClass="err" path="regi_number2" />
     	</div>
   	</div>
@@ -161,18 +162,18 @@
 	<div class="input-group">
     <div class="col-md-2 mb-4 w-10">
       <label for="phone1">연락처</label>
-      <input type="text" class="form-control" id="phone1" name="phone1" placeholder="" required value="${MemberBean.phone1}">
+      <input type="text" class="form-control" id="phone1" name="phone1" placeholder="" required value="${formatPhone1}">
    		<form:errors cssClass="err" path="phone1" />
     </div>
    
     <div class="col-md-2 mb-4 w-10">
       <label for="phone2">&nbsp</label>
-      <input type="text" class="form-control" id="phone2" name="phone2" placeholder="" required value="${MemberBean.phone2}">
+      <input type="text" class="form-control" id="phone2" name="phone2" placeholder="" required value="${formatPhone2}">
        	<form:errors cssClass="err" path="phone2" />
     </div>
     <div class="col-md-2 mb-4 w-10">
       <label for="phone3">&nbsp</label>
-      <input type="text" class="form-control" id="phone3" name="phone3" placeholder="" required value="${MemberBean.phone3}">
+      <input type="text" class="form-control" id="phone3" name="phone3" placeholder="" required value="${formatPhone3}" >
            <form:errors cssClass="err" path="phone3" />
     </div>
  

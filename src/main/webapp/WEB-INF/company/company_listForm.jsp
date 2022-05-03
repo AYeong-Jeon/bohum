@@ -22,8 +22,8 @@ function delRight() {
 <br><br>
 <div class="container">
       <form action="companyList.cp" method="get">
-         <input type="submit" class="btn btn-outline-success "  style="float: right; height: 30px;" value="회사명 검색">
-         <input type="text" name="s_company" style=" width:300px; float: right; height: 30px;" class="form-control">                  
+         <input type="submit" class="btn btn-success "  style="float: right;" value="회사명 검색">
+         <input type="text" name="s_company" style=" width:300px; float: right;" class="form-control">                  
       </form>
    
    <br><br>
@@ -49,7 +49,9 @@ function delRight() {
          <c:forEach var="company" items="${ list}">
             <tr align="center">
                <td>${company.cnum }</td>
-               <td><img src="<%=request.getContextPath() %>/resources/company/${company.cimage}" width="100" height="100"></td>
+               <td><a href="companydetail.cp?cnum=${company.cnum }">
+               <img src="<%=request.getContextPath() %>/resources/company/${company.cimage}" width="100" height="100">
+               </a></td>
                <td>${company.cname }</td>
                <input type="hidden" name="cnum" value="${company.cnum }" readOnly>
                <td><a class="btn btn-sm"  onclick="delRight()">삭제</a></td>

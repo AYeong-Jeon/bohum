@@ -31,18 +31,17 @@ public class HeartMemberListController {
 		
 		MemberBean companyInfo=(MemberBean)session.getAttribute("loginInfo");
 		String cname=companyInfo.getCname();
-		
-
-		List<GraphBean> DateList = heartMemberDao.getGraphDateCom(loginComMem);
-		
-		GraphJsonBean graphJsonBean = new GraphJsonBean(DateList);
 
 		List<HeartMemberBean> heartMemberList = heartMemberDao.getHeartMemberList(cname);
 		request.setAttribute("heartMemberList", heartMemberList);
+		
+		List<GraphBean> DateList = heartMemberDao.getGraphDateCom(loginComMem);
+		GraphJsonBean graphJsonBean = new GraphJsonBean(DateList);
 		System.out.println("X_list"+graphJsonBean.getMyLabels().size());
 		System.out.println("Y_list"+graphJsonBean.getMyData().size());
 		session.setAttribute("X_list", graphJsonBean.getMyLabels());
 		session.setAttribute("Y_list", graphJsonBean.getMyData());
+		
 		List<HeartMemberBean> heartInsuName = heartMemberDao.getInsuName(loginComMem);
 		String heartInsuName2 = null;
 		for(HeartMemberBean hb : heartInsuName) {

@@ -56,7 +56,8 @@ public class MemberUpdateController {
    public String doAction(
          MemberBean bean, 
          HttpSession session,
-         BindingResult result) {
+         BindingResult result,
+         HttpServletResponse response) {
       
       System.out.println("update4");
       
@@ -69,15 +70,15 @@ public class MemberUpdateController {
        cnt= memberDao.updateMember(bean);
       System.out.println("update cnt2:" + cnt);
       
-      
-      if(cnt>=0) {
-         System.out.println("성공");
-         return gotoPage;
-      }
-      else {
-         System.out.println("실패");
-   //      request.setAttribute("bean", bean);
+      Responsing responsing = new Responsing(response);
+		if(cnt>=0) { 
+			responsing.useAlert("수정 성공했습니다");
+			responsing.useRedirect("myPage.mem");
+			}else {
+				responsing.useAlert("수정 실패했습니다");
+				responsing.useHistory(-1);
+			}
          return getPage;
-      }
+      
    }
 }

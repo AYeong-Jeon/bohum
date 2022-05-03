@@ -161,7 +161,7 @@
 			</div>
 
 			<hr class="my-4">
-			<button class="w-100 btn btn-primary btn-lg" type="submit"
+			<button class="w-100 btn btn-success btn-lg" type="submit"
 				value="수정">보험 상품 수정</button>
 			</form:form>
 	</div>

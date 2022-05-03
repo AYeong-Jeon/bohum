@@ -44,8 +44,8 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-					<button type="submit" class="btn btn-secondary">변경 사항 저장</button>
+					<button type="button" class="btn btn-outline-success" data-dismiss="modal">닫기</button>
+					<button type="submit" class="btn btn-success">변경 사항 저장</button>
 				</div>
 			</form>
 

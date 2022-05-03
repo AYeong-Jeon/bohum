@@ -87,7 +87,7 @@
       	</div><br>
       	
           <hr class="my-4">
-          <button class="w-100 btn btn-primary btn-lg" type="submit" value="회사 정보 등록">보험사 등록</button>
+          <button class="w-100 btn btn-success btn-lg" type="submit" value="회사 정보 등록">보험사 등록</button>
         </form:form>
       </div>
     </div>

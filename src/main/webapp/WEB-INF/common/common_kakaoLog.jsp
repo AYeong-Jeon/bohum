@@ -44,7 +44,7 @@ function kakaoLogin() {
             	//alert(emails[0]);
             	//alert(emails[1]);
             	document.getElementById("email1").value = emails[0];
-            	document.getElementById("email2").value = "@"+emails[1];
+            	document.getElementById("email2").value = emails[1];
 
             	myFormSubmit();
             }else{

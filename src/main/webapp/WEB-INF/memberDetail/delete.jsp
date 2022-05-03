@@ -38,7 +38,7 @@ function right() {
 			<br>
 			<div class="form-group">
 				<div class=" col-md-offset-3 col-md-6 ">
-					<button type="submit" class="form-control btn btn-primary">내 정보 삭제</button>
+					<button type="submit" class="form-control btn btn-success">내 정보 삭제</button>
 				</div>
 			</div>
 		</form:form>

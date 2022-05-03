@@ -3,10 +3,11 @@
 <%@include file="/WEB-INF/member/top.jsp" %>
 <style>
    .table{
-      width:80%;
+      width:90%;
    }
 </style>
 <center>
+<br><br>
 <div class="container">
       <table class="table table-bordered">
          <tr>
@@ -49,14 +50,15 @@
             </td>
          </tr>
          <tr align="center" height="30">
-            <td colspan="4" class="table-light">
-               <input type="button" value="글수정" class="btn btn-dark"
+         <td class="table-light"></td>
+            <td colspan="3" class="table-light">
+               <input type="button" value="글수정" class="btn btn-success"
                onclick="location.href='update.qa?no=${ qA_BoardBean.no }&pageNumber=${ pageNumber}'">
-               <input type="button" value="글삭제" class="btn btn-dark"
+               <input type="button" value="글삭제" class="btn btn-success"
                onClick="location.href='delete.qa?no=${ qA_BoardBean.no}&pageNumber=${ pageNumber}&image=${qA_BoardBean.image }'">
-               <input type="button" value="답글쓰기" class="btn btn-dark"
+               <input type="button" value="답글쓰기" class="btn btn-success"
                onClick="location.href='reply.qa?ref=${ qA_BoardBean.getRef()}&re_step=${ qA_BoardBean.getRe_step()}&re_level=${ qA_BoardBean.getRe_level()}&pageNumber=${pageNumber }&no=${qA_BoardBean.no } '">
-               <input type="button" value="글목록" class="btn btn-dark"
+               <input type="button" value="글목록" class="btn btn-success"
                onClick="location.href='list.qa?pageNumber=${ pageNumber}'">
             </td>
          </tr>

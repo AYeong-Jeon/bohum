@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="top.jsp"%>	
 <%@ include file="../common/common.jsp"%>
@@ -121,76 +121,35 @@ function repwcheck(){
 	}
 }//repwcheck
 
-function sendSms(){
-	//alert(1);
-	var code1 = document.getElementById("code1");
-	var codeck = document.getElementById("codeck");
-	if(code1.style.display=='none' && codeck.style.display=='none'){
-		code1.style.display = 'block';
-		codeck.style.display = 'block';
-	};
-	
-	$.ajax({
-		url : "sendSms.mem",
-		data : ({
-			phone : $('input[name=phone1]').val()+$('input[name=phone2]').val()+$('input[name=phone3]').val()
-		}),
-		type : "post",
-		
-		success : function(data){
-				if($.trim(data) == 'false'){
-					alert("인증번호 전송 실패");
-				}
-				else{
-					alert("인증번호 전송");
-					$("#phone1").attr("readonly",true);
-					$("#phone2").attr("readonly",true);
-					$("#phone3").attr("readonly",true);
-					code = data;
-				}
-			}
-	})
-	
-}
-function codeCk(){
-	//alert(1);
-	if($('input[name=code1]').val().length == 0){
-		alert('인증 번호를 발급받으세요.');
-		codeCheck = false;
-	}
-	else if($('input[name=code1]').val() == $.trim(code)){
-		alert('인증 완료');
-		codeCheck = true;
-	}
-	else{
-		alert('인증 번호가 일치하지 않습니다.');
-		codeCheck = false;
-	}
-}
-
+//사업자 등록번호 api 불러오기
 function removeCname(){
     //alert(1);
     var p1 = document.getElementById("cname1");
     if(p1.style.display=='none'){
        p1.style.display = 'block';
     }
+   
+    var myData = {
+  	    b_no: $('input[id="cregi_num"]').val(),//사업자 등록번호 10자리
+  	    b_name: $('input[id="com_name"]').val(),//대표자 성명
+  	    start_dt: $('input[id="start_dt"]').val()//개업일자
+  		};
     
-    $.ajax({
-       url : "search_corp_num.cp",
-       data : ({
-          cregi_num : $('input[name=cregi_num]').val()
-       }),
-       type : "post",
-       
-       success : function(data){
-             //alert($.trim(data));
-    	   if($.trim(data)!=null || $.trim(data)!='null'){
-            	$('input[name=cname]').val($.trim(data));
-            }else{
-           	 alert('회사 정보 없음');
-            }
-          }
-    })
+     $.ajax({
+  	  url: "companyNumber01.mem",
+  	  traditional: true,
+  	  type: "POST",
+  	  data: JSON.stringify(myData),
+  	  dataType: "JSON",
+  	  contentType: "application/json",
+  	  accept: "application/json",
+  	  success: function(result) {
+  	      console.log("result : "+result);
+  	  },
+  	  error: function(result) {
+  	      console.log(result.responseText); //responseText의 에러메세지 확인
+  	  }
+  	});
  }
 </script>
 <br>
@@ -198,20 +157,25 @@ function removeCname(){
 <div id="legend">
       <legend class="" >보험사 회원가입</legend>
 </div>
-
+<form>
 <div class="form-row">
     <div class="col-md-6 mb-3 w-25">
       <label class="control-label" for="cregi_num">사업자등록번호</label>
-         <input type="text" class="form-control" name="cregi_num" value="" id="cregi_num" placeholder="- 없이 숫자만 입력"> 
+         <input type="text" class="form-control" name="cregi_num" id="cregi_num" placeholder="- 없이 숫자만 입력"> 
+      <label class="control-label" for="com_name">대표자 성명</label>
+         <input type="text" class="form-control" name="com_name" id="com_name"> 
+      <label class="control-label" for="start_dt">개업일자</label>
+         <input type="text" class="form-control" name="start_dt" id="start_dt" placeholder="YYYYMMDD"> 
          <input type="button" class="btn btn-outline-secondary" value="조회" onClick="removeCname()" id="cregi_num2">
     </div>
 </div>
-
+</form>
+<hr>
  <div class="form-row">
     <div class="col-md-6 mb-3">
      <div id="cname1" style="display:none;">   
          <label class="control-label" for="cname">회사명</label>
-         <input type="text" name="cname" value="${cname }" readonly="readonly">
+         <input type="text" name="cname" value="" readonly="readonly">
       </div>
     </div>
 </div>
@@ -268,7 +232,7 @@ function removeCname(){
 
     <div class="col-md-3 mb-4 w-25">
       <label for="regi_number2">&nbsp</label>
-      <input type="password" class="form-control" id="regi_number2" name="regi_number2" placeholder="7자리 입력" required value="${member.regi_number2}">
+      <input type="text" class="form-control" id="regi_number2" name="regi_number2" placeholder="7자리 입력" required value="${member.regi_number2}">
    		<form:errors cssClass="err" path="regi_number2" />
     </div>
   </div>
@@ -290,14 +254,6 @@ function removeCname(){
       <input type="text" class="form-control" id="phone3" name="phone3" placeholder="" required value="${member.phone3}">
            		<form:errors cssClass="err" path="phone3" />
     </div>
-    <div class="col-md-1">
-		 <label for="" class="form-label"> &nbsp;&nbsp;</label>
-	<input type="button" name="phoneck" onClick="sendSms()" value="인증번호 전송"><br>
-			<input type="text" id="code1" name="code1" placeholder="인증번호 입력" style="display: none;">
-			<input type="button" id="codeck" name="codeck" value="인증" style="display: none;" onClick="codeCk()">
-      </div>
-    </div>
-    
   </div>
 	
 <div class="input-group">
@@ -337,5 +293,7 @@ function removeCname(){
  
 </form:form>
 </div>
+
+
 <br><br><br><br>
-<%@include file="bottom.jsp"%>
+<%@include file="bottom.jsp"%> --%>

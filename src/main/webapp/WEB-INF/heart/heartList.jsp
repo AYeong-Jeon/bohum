@@ -44,7 +44,7 @@
 <body class="bg-light">
 <div class="container">
 <form action="delete.ht" method="post">
-<input type="button" class="btn btn-outline-success" value="삭제" onClick="multiDelete()" style="float: right; margin:20px; height: 30px;" />
+<input type="button" class="btn btn-success" value="삭제" onClick="multiDelete()" style="float: right; margin:20px;" />
 <table class="table table-hover">
  	<thead>
 	<tr align="center">
@@ -61,7 +61,7 @@
 	<tr>
 		<td><input type="checkbox" name="rowcheck" value="${heart.insu }"></td>
 		<td align="left">
-		<a href="${heart.link }" >${heart.insuname }</a>
+		      <a href="http://${heart.link }">${heart.insuname }</a>
 		</td>
 		<td>${heart.category }</td>
 		<td>${heart.insucompany }</td>

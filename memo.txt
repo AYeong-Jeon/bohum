@@ -1,4 +1,4 @@
--- °øÁö»çÇ× ½ÃÄö½º
+ï»¿-- ê³µì§€ì‚¬í•­ ì‹œí€€ìŠ¤
 drop sequence board_seq;
 create sequence board_seq
 	increment by 1
@@ -7,15 +7,15 @@ create sequence board_seq
   	maxvalue 10000
   	nocache;
 
--- °øÁö»çÇ× °Ô½ÃÆÇ Å×ÀÌºí
+-- ê³µì§€ì‚¬í•­ ê²Œì‹œíŒ í…Œì´ë¸”
 
--- °Ô½Ã¹°¹øÈ£
--- °Ô½Ã¹° Á¦¸ñ
--- °Ô½Ã¹° ³»¿ë
--- °Ô½Ã¹° Ã·ºÎÆÄÀÏ
--- °Ô½Ã¹° Á¶È¸¼ö
--- °Ô½Ã¹° µî·ÏÀÏ
--- °Ô½Ã¹° °íÁ¤
+-- ê²Œì‹œë¬¼ë²ˆí˜¸
+-- ê²Œì‹œë¬¼ ì œëª©
+-- ê²Œì‹œë¬¼ ë‚´ìš©
+-- ê²Œì‹œë¬¼ ì²¨ë¶€íŒŒì¼
+-- ê²Œì‹œë¬¼ ì¡°íšŒìˆ˜
+-- ê²Œì‹œë¬¼ ë“±ë¡ì¼
+-- ê²Œì‹œë¬¼ ê³ ì •
 
 drop table board cascade constraints;
 create table board(
@@ -29,47 +29,48 @@ create table board(
 );
 
 insert into board(bnum, btitle, bcontents, fix) 
-values(board_seq.nextval, 'Á¦¸ñ1', '³»¿ë1', 0);
+values(board_seq.nextval, 'ì œëª©1', 'ë‚´ìš©1', 1);
 
 insert into board(bnum, btitle, bcontents, fix) 
-values(board_seq.nextval, 'Á¦¸ñ2', '³»¿ë2', 0);
+values(board_seq.nextval, 'ì œëª©2', 'ë‚´ìš©2', 0);
 
 insert into board(bnum, btitle, bcontents, fix) 
-values(board_seq.nextval, 'Á¦¸ñ3', '³»¿ë3', 0);
+values(board_seq.nextval, 'ì œëª©3', 'ë‚´ìš©3', 0);
 
-insert into board(bnum, btitle, bcontents, fix) 
-values(board_seq.nextval, 'Á¦¸ñ4', '³»¿ë4', 1);
+nsert into board(bnum, btitle, bcontents, bdate, fix)
+values(board_seq.nextval, '[ê³µì§€] íšŒì›ê°€ì… ì•ˆë‚´', 'íšŒì› ê°€ì…ì´ ì¼ì‹œ ì¤‘ë‹¨ë˜ì—ˆìŠµë‹ˆë‹¤. ê°€ì…ì„ ì›í•˜ì‹œëŠ” ë¶„ì€ ê´€ë¦¬ìì—ê²Œ ë¬¸ì˜í•˜ì„¸ìš”', '2022-04-06',1);
 
-insert into board(bnum, btitle, bcontents, fix) 
-values(board_seq.nextval, 'Á¦¸ñ5', '³»¿ë5', 1);
+insert into board(bnum, btitle, bcontents, bdate, fix)
+values(board_seq.nextval, 'ë³´í—˜ê³„ì•½ì— ëŒ€í•´ ì•Œë ¤ë“œë¦½ë‹ˆë‹¤.', 'ìì„¸í•œ ìƒë‹´ì€ ì „í™”ë¡œ ë¬¸ì˜í•˜ì„¸ìš”. ', '2022-04-04',1);
 
-insert into board(bnum, btitle, bcontents, fix) 
-values(board_seq.nextval, 'Á¦¸ñ6', '³»¿ë6', 0);
 
-insert into board(bnum, btitle, bcontents, fix) 
-values(board_seq.nextval, 'Á¦¸ñ7', '³»¿ë7', 0);
+
+
+
+
+
 commit;
 
 
--- Å¥¾Ø¿¡ÀÌ ½ÃÄö½º
+-- íì•¤ì—ì´ ì‹œí€€ìŠ¤
 drop sequence qa_seq;
 create sequence qa_seq
 	increment by 1
 	start with 1
 	nocache;
 
--- Å¥¾Ø¿¡ÀÌ °Ô½ÃÆÇ Å×ÀÌºí
+-- íì•¤ì—ì´ ê²Œì‹œíŒ í…Œì´ë¸”
 
--- °Ô½Ã¹° ½ÃÄö½º
--- °Ô½Ã¹° Ä«Å×°í¸®
--- °Ô½Ã¹° Á¦¸ñ
--- °Ô½Ã¹° ÀÛ¼ºÀÚ
--- ºñ¹Ğ¹øÈ£
--- º¸Çè»ç
--- °Ô½Ã¹° ³»¿ë
--- °Ô½Ã¹° Ã·ºÎÆÄÀÏ
--- Á¶È¸¼ö
--- °Ô½Ã¹° µî·ÏÀÏ
+-- ê²Œì‹œë¬¼ ì‹œí€€ìŠ¤
+-- ê²Œì‹œë¬¼ ì¹´í…Œê³ ë¦¬
+-- ê²Œì‹œë¬¼ ì œëª©
+-- ê²Œì‹œë¬¼ ì‘ì„±ì
+-- ë¹„ë°€ë²ˆí˜¸
+-- ë³´í—˜ì‚¬
+-- ê²Œì‹œë¬¼ ë‚´ìš©
+-- ê²Œì‹œë¬¼ ì²¨ë¶€íŒŒì¼
+-- ì¡°íšŒìˆ˜
+-- ê²Œì‹œë¬¼ ë“±ë¡ì¼
 -- ref
 -- re_step
 -- re_level
@@ -78,7 +79,7 @@ create sequence qa_seq
 drop table qa_board  CASCADE CONSTRAINTS;
 create table qa_board(
    no number not null primary key,
-   category varchar2(20) default 'º¸ÇèÁú¹®' check(category in('º¸ÇèÁú¹®','°í°´ÀÇ¼Ò¸®','´äº¯')),
+   category varchar2(20) default 'ë³´í—˜ì§ˆë¬¸' check(category in('ë³´í—˜ì§ˆë¬¸','ê³ ê°ì˜ì†Œë¦¬','ë‹µë³€')),
    title varchar2(60) not null,
    writer varchar2(20) not null,
    password varchar2(20) not null,
@@ -93,64 +94,40 @@ create table qa_board(
    ip varchar2(15) not null
 );
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a1','a1','a1','1234','2015-1-1',1,0,0,'³»¿ë1','127.0.0.1');
+insert into qa_board(no,writer,company,title,password,ref,re_step,re_level,content,category,ip)
+values(qa_seq.nextval,'kim','í¥êµ­í™”ì¬','ì•” ë³´í—˜ ë¬¸ì˜í•©ë‹ˆë‹¤','1234',1,0,0,'ì•” ë³´í—˜','ë³´í—˜ì§ˆë¬¸','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a2','a2','a2','1234','2015-1-1',2,0,0,'³»¿ë2','127.0.0.1');
+insert into qa_board(no,writer,company,title,password,ref,re_step,re_level,content,category,ip)
+values(qa_seq.nextval,'park','í¥êµ­í™”ì¬','ëŒ€ë©´ ìƒë‹´ì˜ˆì•½ì´ ê°€ëŠ¥í• ê¹Œìš”?','1234',2,0,0,'ëŒ€ë©´ìƒë‹´ë„ ê°€ëŠ¥í• ê¹Œìš”','ê³ ê°ì˜ì†Œë¦¬','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a21','a2','a21','1234','2015-1-1',2,4,1,'³»¿ë21','127.0.0.1');
+insert into qa_board(no,writer,company,title,password,ref,re_step,re_level,content,category,ip)
+values(qa_seq.nextval,'yoo','í¥êµ­í™”ì¬','ì‹ ìƒì•„ ë³´í—˜ ë¬¸ì˜í•©ë‹ˆë‹¤','1234',3,0,0,'ì‹ ìƒì•„ ë³´í—˜','ë³´í—˜ì§ˆë¬¸','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a22','a2','a22','1234','2015-1-1',2,1,1,'³»¿ë22','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a221','a2','a221','1234','2015-1-1',2,3,2,'³»¿ë221','127.0.0.1');
+insert into qa_board(no,writer,company,title,password,ref,re_step,re_level,content,category,ip)
+values(qa_seq.nextval, 'yoo', 'í¥êµ­í™”ì¬', '[ë‹µë³€]ì‹ ìƒì•„ ë³´í—˜ ë¬¸ì˜í•©ë‹ˆë‹¤', '1234',3,1,1,'ì „í™” ì£¼ì„¸ìš” 010-1111-1111','ë³´í—˜ì§ˆë¬¸','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a222','a2','a222','1234','2015-1-1',2,2,2,'³»¿ë222','127.0.0.1');
+insert into qa_board(no,writer,company,title,password,ref,re_step,re_level,content,category,ip)
+values(qa_seq.nextval,'cho','í¥êµ­í™”ì¬','ìš´ì „ì ë³´í—˜ ê²¬ì  ë¬¸ì˜í•©ë‹ˆë‹¤','1234',4,0,0,'ìš´ì „ì ë³´í—˜','ë³´í—˜ì§ˆë¬¸','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a3','a3','a3','1234','2015-1-1',7,0,0,'³»¿ë3','127.0.0.1');
+insert into qa_board(no,writer,company,title,password,ref,re_step,re_level,content,category,ip)
+values(qa_seq.nextval,'yoon','í¥êµ­í™”ì¬','ìœ¤ì„ ì˜ ì„¤ê³„ì‚¬ë‹˜ ì¶”ì²œí•©ë‹ˆë‹¤','1234',5,0,0,'ìœ¤ì„ ì˜ì§ì›ë‹˜ ë„ˆë¬´ ì¢‹ì•„ìš”','ê³ ê°ì˜ì†Œë¦¬','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a31','a3','a31','1234','2015-1-1',7,6,1,'³»¿ë31','127.0.0.1');
 
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a311','a3','a311','1234','2015-1-1',7,7,2,'³»¿ë311','127.0.0.1');
-
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a32','a3','a32','1234','2015-1-1',7,2,1,'³»¿ë32','127.0.0.1');
-
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a321','a3','a321','1234','2015-1-1',7,5,2,'³»¿ë321','127.0.0.1');
-
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a322','a3','a322','1234','2015-1-1',7,3,2,'³»¿ë322','127.0.0.1');
-
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a3221','a3','a3221','1234','2015-1-1',7,4,3,'³»¿ë3221','127.0.0.1');
-
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'a33','a3','a33','1234','2015-1-1',7,1,1,'³»¿ë33','127.0.0.1');
-
-insert into qa_board(no,writer,company,title,password,reg_date ,ref,re_step,re_level,content,ip)
-values(qa_seq.nextval,'kim','a1','a1','1234','2015-1-1',1,0,0,'³»¿ë1','127.0.0.1');
 
 commit;
 
--- º¸Çè Ä«Å×°í¸® ½ÃÄö½º
+-- ë³´í—˜ ì¹´í…Œê³ ë¦¬ ì‹œí€€ìŠ¤
 drop sequence insu_cateseq;
 create sequence insu_cateseq 
    start with 1 
    increment by 1 
    nocache;
 
--- º¸Çè Ä«Å×°í¸® Å×ÀÌºí
+-- ë³´í—˜ ì¹´í…Œê³ ë¦¬ í…Œì´ë¸”
 
--- º¸Çè Ä«Å×°í¸® ½ÃÄö½º
--- º¸Çè Ä«Å×°í¸® ÀÌ¸§
+-- ë³´í—˜ ì¹´í…Œê³ ë¦¬ ì‹œí€€ìŠ¤
+-- ë³´í—˜ ì¹´í…Œê³ ë¦¬ ì´ë¦„
 
 drop table insu_cate cascade constraints;
 create table insu_cate(
@@ -158,33 +135,33 @@ create table insu_cate(
    category varchar2(50) constraint pk_category primary key
 );
 
-insert into insu_cate values(1,'¾Ï º¸Çè');
-insert into insu_cate values(2,'Á¾½Å/Á¤±â º¸Çè');
-insert into insu_cate values(3,'À¯º´ÀÚ º¸Çè');
-insert into insu_cate values(4,'¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè');
+insert into insu_cate values(1,'ì•” ë³´í—˜');
+insert into insu_cate values(2,'ì¢…ì‹ /ì •ê¸° ë³´í—˜');
+insert into insu_cate values(3,'ìœ ë³‘ì ë³´í—˜');
+insert into insu_cate values(4,'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜');
 
 
---º¸Çè ½ÃÄö½º
+--ë³´í—˜ ì‹œí€€ìŠ¤
 drop sequence insu_seq;
 create sequence insu_seq
    minvalue 1
    start with 1
    nocache;
 
---º¸Çè Á¤º¸ Å×ÀÌºí
+--ë³´í—˜ ì •ë³´ í…Œì´ë¸”
 
---º¸Çè ½ÃÄö½º 
---º¸Çè»ç
---º¸Çè ÀÌ¸§
---º¸Çè Ä«Å×°í¸®(½ÃÄö½º·Î ¿¬°á, ²À ÀÖ´ÂÁö È®ÀÎ) (¾Ï ½Å»ı¾Æ ¾î¸°ÀÌ Á¾½Å)
---º¸Çè Å¸ÀÔ (°»½Å ºñ°»½Å)
---º¸Çè·á(Àı´ë°ª ¾Æ´Ô)
---°¡ÀÔ ³ªÀÌ
---º¸Çè ±â°£
---³³ÀÔ ±â°£
---³³ÀÔ ÁÖ±â
---ÁÖ°è¾à
---Æ¯¾à(½ÃÄö½º ¿¬°á)
+--ë³´í—˜ ì‹œí€€ìŠ¤ 
+--ë³´í—˜ì‚¬
+--ë³´í—˜ ì´ë¦„
+--ë³´í—˜ ì¹´í…Œê³ ë¦¬(ì‹œí€€ìŠ¤ë¡œ ì—°ê²°, ê¼­ ìˆëŠ”ì§€ í™•ì¸) (ì•” ì‹ ìƒì•„ ì–´ë¦°ì´ ì¢…ì‹ )
+--ë³´í—˜ íƒ€ì… (ê°±ì‹  ë¹„ê°±ì‹ )
+--ë³´í—˜ë£Œ(ì ˆëŒ€ê°’ ì•„ë‹˜)
+--ê°€ì… ë‚˜ì´
+--ë³´í—˜ ê¸°ê°„
+--ë‚©ì… ê¸°ê°„
+--ë‚©ì… ì£¼ê¸°
+--ì£¼ê³„ì•½
+--íŠ¹ì•½(ì‹œí€€ìŠ¤ ì—°ê²°)
 
 drop table insu cascade constraints;
 create table insu(
@@ -192,7 +169,7 @@ create table insu(
    insucompany varchar2(100),
    insuname varchar2(200),
    category varchar2(100),
-   insutype varchar2(30) default '°»½Å',
+   insutype varchar2(30) default 'ê°±ì‹ ',
    insuprice varchar2(200),
    insuage varchar2(200),
    insuper varchar2(200),
@@ -203,111 +180,117 @@ create table insu(
    link varchar2(500)
 );
 
---Ä¡¸Åº¸Çè -- (ÀÌ¼ö¿¬)
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'Èï±¹È­Àç','Çàº¹ÇÑÀÎ»ı°£º´º¸Çè','Ä¡¸Å/°£º´ º¸Çè','ºñ°»½Å','30¼¼~ÃÖ´ë70¼¼','80¼¼,90¼¼,100¼¼¸¸±â','10³â,15³â,20³â,25³â,30³â³³','¿ù³³','www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=27','Çàº¹ÇÑÀÎ»ı°£º´º¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'ÇÑÈ­¼ÕÇØº¸Çè','LIFEPLUS½Ç¼Ó°£º´Ä¡¸Åº¸Çè','Ä¡¸Å/°£º´ º¸Çè','ºñ°»½Å','20¼¼~ÃÖ´ë70¼¼','80,90,95,100,110¼¼ ¸¸±â','5,10,15,20,25,30³â³³','¿ù³³','www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01390001','lifeplus½Ç¼Ó°£º´Ä¡¸Åº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'·Ôµ¥¼ÕÇØº¸Çè','¹«¹è´ç let:care °£º´º¸Çè¥±','Ä¡¸Å/°£º´ º¸Çè','ÀÏºÎ °»½Å','15¼¼~ÃÖ´ë75¼¼','90,100¼¼ ¸¸±â','10,215,20,30³â³³','¿ù³³,3°³¿ù³³,6°³¿ù³³,¿¬³³','lotteins.co.kr/web/C/D/A/cda020.jsp?prdtseq=6','letcare°£º´º¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'¶óÀÌ³ª»ı¸í','THEµçµçÇÑ°£º´ºñÄ¡¸Åº¸Çè','Ä¡¸Å/°£º´ º¸Çè','ºñ°»½Å','30¼¼~60¼¼(Àü±â³³ÀÏ °æ¿ì ÃÖ´ë 75¼¼±îÁö)°¡ÀÔ°¡´É','85,90¼¼¸¸±â','20,25,30³â³³,Àü±â³³','¿ù³³','www.lina.co.kr/product/productView/productView_P00320.htm','theµçµçÇÑ°£º´ºñÄ¡¸Åº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'µ¿¾ç»ı¸í','(¹«)°£º´ºñÇÃ·¯½ºÄ¡¸Åº¸Çè','Ä¡¸Å/°£º´ º¸Çè','ºñ°»½Å','30»õ~ÃÖ´ë75¼¼','85,90,100¼¼ ¸¸±â','10,15,20,30³â³³,80,90³â³³','','www.myangel.co.kr/process/main','°£º´ºñÇÃ·¯½ºÄ¡¸Åº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'KB¼ÕÇØº¸Çè','The°£ÆíÇÑ Ä¡¸Å°£º´º¸Çè','Ä¡¸Å/°£º´ º¸Çè','ºñ°»½Å','25~(90-³³ÀÔ±â°£)¼¼','90,95,100¼¼','20,25,30³â³³','¿ù³³','www.kbinsure.co.kr/CG306070001.ec#','the°£ÆíÇÑÄ¡¸Å°£º´º¸Çè.PNG');
+--ì¹˜ë§¤ë³´í—˜ -- (ì´ìˆ˜ì—°)
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'í¥êµ­í™”ì¬','í–‰ë³µí•œì¸ìƒê°„ë³‘ë³´í—˜','ì¹˜ë§¤/ê°„ë³‘ ë³´í—˜','ë¹„ê°±ì‹ ','30ì„¸~ìµœëŒ€70ì„¸','80ì„¸,90ì„¸,100ì„¸ë§Œê¸°','10ë…„,15ë…„,20ë…„,25ë…„,30ë…„ë‚©','ì›”ë‚©','www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=27','í–‰ë³µí•œì¸ìƒê°„ë³‘ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'í•œí™”ì†í•´ë³´í—˜','LIFEPLUSì‹¤ì†ê°„ë³‘ì¹˜ë§¤ë³´í—˜','ì¹˜ë§¤/ê°„ë³‘ ë³´í—˜','ë¹„ê°±ì‹ ','20ì„¸~ìµœëŒ€70ì„¸','80,90,95,100,110ì„¸ ë§Œê¸°','5,10,15,20,25,30ë…„ë‚©','ì›”ë‚©','www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01390001','lifeplusì‹¤ì†ê°„ë³‘ì¹˜ë§¤ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'ë¡¯ë°ì†í•´ë³´í—˜','ë¬´ë°°ë‹¹ let:care ê°„ë³‘ë³´í—˜â…¡','ì¹˜ë§¤/ê°„ë³‘ ë³´í—˜','ì¼ë¶€ ê°±ì‹ ','15ì„¸~ìµœëŒ€75ì„¸','90,100ì„¸ ë§Œê¸°','10,215,20,30ë…„ë‚©','ì›”ë‚©,3ê°œì›”ë‚©,6ê°œì›”ë‚©,ì—°ë‚©','lotteins.co.kr/web/C/D/A/cda020.jsp?prdtseq=6','letcareê°„ë³‘ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'ë¼ì´ë‚˜ìƒëª…','THEë“ ë“ í•œê°„ë³‘ë¹„ì¹˜ë§¤ë³´í—˜','ì¹˜ë§¤/ê°„ë³‘ ë³´í—˜','ë¹„ê°±ì‹ ','30ì„¸~60ì„¸(ì „ê¸°ë‚©ì¼ ê²½ìš° ìµœëŒ€ 75ì„¸ê¹Œì§€)ê°€ì…ê°€ëŠ¥','85,90ì„¸ë§Œê¸°','20,25,30ë…„ë‚©,ì „ê¸°ë‚©','ì›”ë‚©','www.lina.co.kr/product/productView/productView_P00320.htm','theë“ ë“ í•œê°„ë³‘ë¹„ì¹˜ë§¤ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'ë™ì–‘ìƒëª…','(ë¬´)ê°„ë³‘ë¹„í”ŒëŸ¬ìŠ¤ì¹˜ë§¤ë³´í—˜','ì¹˜ë§¤/ê°„ë³‘ ë³´í—˜','ë¹„ê°±ì‹ ','30ìƒˆ~ìµœëŒ€75ì„¸','85,90,100ì„¸ ë§Œê¸°','10,15,20,30ë…„ë‚©,80,90ë…„ë‚©','','www.myangel.co.kr/process/main','ê°„ë³‘ë¹„í”ŒëŸ¬ìŠ¤ì¹˜ë§¤ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'KBì†í•´ë³´í—˜','Theê°„í¸í•œ ì¹˜ë§¤ê°„ë³‘ë³´í—˜','ì¹˜ë§¤/ê°„ë³‘ ë³´í—˜','ë¹„ê°±ì‹ ','25~(90-ë‚©ì…ê¸°ê°„)ì„¸','90,95,100ì„¸','20,25,30ë…„ë‚©','ì›”ë‚©','www.kbinsure.co.kr/CG306070001.ec#','theê°„í¸í•œì¹˜ë§¤ê°„ë³‘ë³´í—˜.PNG');
 
---¿îÀüÀÚ/»óÇØº¸Çè (À¯ÇÏ³ª)
+
+
+--ìš´ì „ì/ìƒí•´ë³´í—˜ (ìœ í•˜ë‚˜)
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'DB»óÇØº¸Çè', '(¹«)ÇÁ·Î¹Ì¶óÀÌÇÁ ÂüÁÁÀº¿îÀüÀÚ»óÇØº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18¼¼~55¼¼', 
-'80¼¼,90¼¼,100¼¼¸¸±â', '10,15,20,25,30³â³³', '¿ù³³,3¿ù³³,6¿ù³³,¿¬³³', 'www.idbins.com/FWMALV0551.do','ÂüÁÁÀº¿îÀüÀÚ»óÇØº¸Çè.PNG' );
+values(insu_seq.nextval,'DBìƒí•´ë³´í—˜', '(ë¬´)í”„ë¡œë¯¸ë¼ì´í”„ ì°¸ì¢‹ì€ìš´ì „ììƒí•´ë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18ì„¸~55ì„¸', 
+'80ì„¸,90ì„¸,100ì„¸ë§Œê¸°', '10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©,3ì›”ë‚©,6ì›”ë‚©,ì—°ë‚©', 'www.idbins.com/FWMALV0551.do','ì°¸ì¢‹ì€ìš´ì „ììƒí•´ë³´í—˜.PNG' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'KB¼ÕÇØº¸Çè', 'KB ¿îÀüÀÚº¸Çè°ú ¾ÈÀüÇÏ°Ô »ç´Â ÀÌ¾ß±â', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '70¼¼¸¸±â:¸¸18¼¼~(70-³³ÀÔ±â°£)¼¼/80,90,100¼¼¸¸±â:¸¸18¼¼~(80-³³ÀÔ±â°£)¼¼', 
-'70,80,90,100¼¼ ¸¸±â', '10,15,20³â³³', '¿ù³³', 'www.kbinsure.co.kr/CG301040001.ec#','kb¿îÀüÀÚº¸Çè°ú¾ÈÀüÇÏ°Ô»ç´ÂÀÌ¾ß±â.PNG' );
+values(insu_seq.nextval,'KBì†í•´ë³´í—˜', 'KB ìš´ì „ìë³´í—˜ê³¼ ì•ˆì „í•˜ê²Œ ì‚¬ëŠ” ì´ì•¼ê¸°', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', '70ì„¸ë§Œê¸°:ë§Œ18ì„¸~(70-ë‚©ì…ê¸°ê°„)ì„¸/80,90,100ì„¸ë§Œê¸°:ë§Œ18ì„¸~(80-ë‚©ì…ê¸°ê°„)ì„¸', 
+'70,80,90,100ì„¸ ë§Œê¸°', '10,15,20ë…„ë‚©', 'ì›”ë‚©', 'www.kbinsure.co.kr/CG301040001.ec#','kbìš´ì „ìë³´í—˜ê³¼ì•ˆì „í•˜ê²Œì‚¬ëŠ”ì´ì•¼ê¸°.PNG' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuprice,insuper,payper,paycyc,link) 
-values(insu_seq.nextval,'NH¼ÕÇØº¸Çè', 'Çì¾Æ¸²´ÙÀÌ·ºÆ®¿îÀüÀÚº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18¼¼~70¼¼','¹®ÀÇ.PNG', '3,5,10,20³â ¸¸±â', '3,5,10,20³â³³/Àü±â³³', '¿ù³³', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D312314' );
+values(insu_seq.nextval,'NHì†í•´ë³´í—˜', 'í—¤ì•„ë¦¼ë‹¤ì´ë ‰íŠ¸ìš´ì „ìë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18ì„¸~70ì„¸','ë¬¸ì˜.PNG', '3,5,10,20ë…„ ë§Œê¸°', '3,5,10,20ë…„ë‚©/ì „ê¸°ë‚©', 'ì›”ë‚©', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D312314' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuprice,insuper,payper,paycyc,link) 
-values(insu_seq.nextval,'NH¼ÕÇØº¸Çè', 'NH¿Ã¹Ù¸¥Áö±¸±Âµ¥ÀÌ¿îÀüÀÚº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18¼¼~ÃÖ´ë80¼¼(¿µ¾÷¿ë¿îÀüÀÚ´Â ¸¸18¼¼~ÃÖ´ë65¼¼)','¹®ÀÇ.PNG', '3,5,10,15,20³â ¸¸±â/70,80,90,100¼¼ ¸¸±â', '10³â³³,Àü±â³³/10,20,30³â³³', '¿ù³³,¿¬³³', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D312714' );
+values(insu_seq.nextval,'NHì†í•´ë³´í—˜', 'NHì˜¬ë°”ë¥¸ì§€êµ¬êµ¿ë°ì´ìš´ì „ìë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18ì„¸~ìµœëŒ€80ì„¸(ì˜ì—…ìš©ìš´ì „ìëŠ” ë§Œ18ì„¸~ìµœëŒ€65ì„¸)','ë¬¸ì˜.PNG', '3,5,10,15,20ë…„ ë§Œê¸°/70,80,90,100ì„¸ ë§Œê¸°', '10ë…„ë‚©,ì „ê¸°ë‚©/10,20,30ë…„ë‚©', 'ì›”ë‚©,ì—°ë‚©', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D312714' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'MG¼ÕÇØº¸Çè', 'ÇÏÀÌÆĞ½º¿îÀüÀÚ»óÇØº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18¼¼~ÃÖ´ë69¼¼ (¡Øº¸Çè±â°£º°,Æ¯¾àº°»óÀÌ)',
- '70,80,90¼¼¸¸±â(Æ¯¾àº° »óÀÌ)', '10,20,30³â³³(º¸Çè±â°£º° »óÀÌ)', '¿ù³³, ¿¬³³', 'www.mggeneralins.com/IS011010DM.scp?menuId=MN0302501&inskdRpsntCd=2161B' ,'ÇÏÀÌÆĞ½º¿îÀüÀÚ»óÇØº¸Çè.PNG');
+values(insu_seq.nextval,'MGì†í•´ë³´í—˜', 'í•˜ì´íŒ¨ìŠ¤ìš´ì „ììƒí•´ë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18ì„¸~ìµœëŒ€69ì„¸ (â€»ë³´í—˜ê¸°ê°„ë³„,íŠ¹ì•½ë³„ìƒì´)',
+ '70,80,90ì„¸ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)', '10,20,30ë…„ë‚©(ë³´í—˜ê¸°ê°„ë³„ ìƒì´)', 'ì›”ë‚©, ì—°ë‚©', 'www.mggeneralins.com/IS011010DM.scp?menuId=MN0302501&inskdRpsntCd=2161B' ,'í•˜ì´íŒ¨ìŠ¤ìš´ì „ììƒí•´ë³´í—˜.PNG');
 
 
 
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'·Ôµ¥¼ÕÇØº¸Çè', 'let:drive¿îÀüÀÚº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', 
-'¸¸18¼¼~ÃÖ´ë 80¼¼(¡Ø °¡ÀÔ°¡´É³ªÀÌ´Â ³³ÀÔ±â°£¿¡ µû¶ó »óÀÌ)', '3,5,10,15,20³â¸¸±â', 'Àü±â³³', '¿ù³³, 3¿ù³³, 6¿ù³³, ¿¬³³', 'www.lotteinsumall.com/driver.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjwgYSTBhDKARIsAB8Kukt77kOO4QCGGewe0Wc0KlXps6vSwvAizxBnhesjfiw1rzCL0BQQu6YaAjFwEALw_wcB' ,'letdrive¿îÀüÀÚº¸Çè.PNG');
-
+values(insu_seq.nextval,'ë¡¯ë°ì†í•´ë³´í—˜', 'let:driveìš´ì „ìë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 
+'ë§Œ18ì„¸~ìµœëŒ€ 80ì„¸(â€» ê°€ì…ê°€ëŠ¥ë‚˜ì´ëŠ” ë‚©ì…ê¸°ê°„ì— ë”°ë¼ ìƒì´)', '3,5,10,15,20ë…„ë§Œê¸°', 'ì „ê¸°ë‚©', 'ì›”ë‚©, 3ì›”ë‚©, 6ì›”ë‚©, ì—°ë‚©', 'www.lotteinsumall.com/driver.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjwgYSTBhDKARIsAB8Kukt77kOO4QCGGewe0Wc0KlXps6vSwvAizxBnhesjfiw1rzCL0BQQu6YaAjFwEALw_wcB' ,'letdriveìš´ì „ìë³´í—˜.PNG');
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'ÇÑÈ­¼ÕÇØº¸Çè', 'Â÷µµ¸®¿îÀüÀÚº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18¼¼~ÃÖ°í70¼¼', '70,80,100¼¼ ¸¸±â', '10³â.15³â.20³â.25³â.30³â³³', '¿ù³³, ¿¬³³', 'www.hwgi.kr/drive?campaign=display&media=skybanner','Â÷µµ¸®¿îÀüÀÚº¸Çè.PNG' );
+values(insu_seq.nextval,'í•œí™”ì†í•´ë³´í—˜', 'ì°¨ë„ë¦¬ìš´ì „ìë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18ì„¸~ìµœê³ 70ì„¸', '70,80,100ì„¸ ë§Œê¸°', '10ë…„.15ë…„.20ë…„.25ë…„.30ë…„ë‚©', 'ì›”ë‚©, ì—°ë‚©', 'www.hwgi.kr/drive?campaign=display&media=skybanner','ì°¨ë„ë¦¬ìš´ì „ìë³´í—˜.PNG' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'Çö´ëÇØ»ó', '´ºÇÏÀÌÄ«¿îÀüÀÚ»óÇØº¸Çè', '¿îÀüÀÚ º¸Çè', 'ÀÏºÎ °»½Å', '¸¸18¼¼~69¼¼', '70¼¼,80¼¼,90¼¼¸¸±â', '10,15,20³â³³', '¿ù³³, ¿¬³³', 'www.hi.co.kr/serviceAction.do','´ºÇÏÀÌÄ«¿îÀüÀÚ»óÇØº¸Çè.PNG' );
+values(insu_seq.nextval,'í˜„ëŒ€í•´ìƒ', 'ë‰´í•˜ì´ì¹´ìš´ì „ììƒí•´ë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', 'ë§Œ18ì„¸~69ì„¸', '70ì„¸,80ì„¸,90ì„¸ë§Œê¸°', '10,15,20ë…„ë‚©', 'ì›”ë‚©, ì—°ë‚©', 'www.hi.co.kr/serviceAction.do','ë‰´í•˜ì´ì¹´ìš´ì „ììƒí•´ë³´í—˜.PNG' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuprice,insuper,payper,paycyc,link) 
-values(insu_seq.nextval,'Èï±¹È­Àç', 'µçµçÇÑSMILE¿îÀüÀÚÁ¾ÇÕº¸Çè(1Á¾_¿¬¸¸±â)', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18~80¼¼','¹®ÀÇ.PNG', '3,5,7,10,15,20³â ¸¸±â', 'Àü±â³³,10³â³³,15³â³³', '', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=35' );
-
+values(insu_seq.nextval,'í¥êµ­í™”ì¬', 'ë“ ë“ í•œSMILEìš´ì „ìì¢…í•©ë³´í—˜(1ì¢…_ì—°ë§Œê¸°)', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18~80ì„¸','ë¬¸ì˜.PNG', '3,5,7,10,15,20ë…„ ë§Œê¸°', 'ì „ê¸°ë‚©,10ë…„ë‚©,15ë…„ë‚©', '', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=35' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'·Ôµ¥¼ÕÇØº¸Çè', 'let:drive¿îÀüÀÚº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', 
-'¸¸18¼¼~ÃÖ´ë 80¼¼(¡Ø °¡ÀÔ°¡´É³ªÀÌ´Â ³³ÀÔ±â°£¿¡ µû¶ó »óÀÌ)', '3,5,10,15,20³â¸¸±â', 'Àü±â³³', '¿ù³³, 3¿ù³³, 6¿ù³³, ¿¬³³', 'www.lotteinsumall.com/driver.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjwgYSTBhDKARIsAB8Kukt77kOO4QCGGewe0Wc0KlXps6vSwvAizxBnhesjfiw1rzCL0BQQu6YaAjFwEALw_wcB' ,'letdrive¿îÀüÀÚº¸Çè.PNG');
-
+values(insu_seq.nextval,'ë¡¯ë°ì†í•´ë³´í—˜', 'let:driveìš´ì „ìë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 
+'ë§Œ18ì„¸~ìµœëŒ€ 80ì„¸(â€» ê°€ì…ê°€ëŠ¥ë‚˜ì´ëŠ” ë‚©ì…ê¸°ê°„ì— ë”°ë¼ ìƒì´)', '3,5,10,15,20ë…„ë§Œê¸°', 'ì „ê¸°ë‚©', 'ì›”ë‚©, 3ì›”ë‚©, 6ì›”ë‚©, ì—°ë‚©', 'www.lotteinsumall.com/driver.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjwgYSTBhDKARIsAB8Kukt77kOO4QCGGewe0Wc0KlXps6vSwvAizxBnhesjfiw1rzCL0BQQu6YaAjFwEALw_wcB' ,'letdriveìš´ì „ìë³´í—˜.PNG');
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'ÇÑÈ­¼ÕÇØº¸Çè', 'Â÷µµ¸®¿îÀüÀÚº¸Çè', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18¼¼~ÃÖ°í70¼¼', '70,80,100¼¼ ¸¸±â', '10³â.15³â.20³â.25³â.30³â³³', '¿ù³³, ¿¬³³', 'www.hwgi.kr/drive?campaign=display&media=skybanner','Â÷µµ¸®¿îÀüÀÚº¸Çè.PNG' );
+values(insu_seq.nextval,'í•œí™”ì†í•´ë³´í—˜', 'ì°¨ë„ë¦¬ìš´ì „ìë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18ì„¸~ìµœê³ 70ì„¸', '70,80,100ì„¸ ë§Œê¸°', '10ë…„.15ë…„.20ë…„.25ë…„.30ë…„ë‚©', 'ì›”ë‚©, ì—°ë‚©', 'www.hwgi.kr/drive?campaign=display&media=skybanner','ì°¨ë„ë¦¬ìš´ì „ìë³´í—˜.PNG' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) 
-values(insu_seq.nextval,'Çö´ëÇØ»ó', '´ºÇÏÀÌÄ«¿îÀüÀÚ»óÇØº¸Çè', '¿îÀüÀÚ º¸Çè', 'ÀÏºÎ °»½Å', '¸¸18¼¼~69¼¼', '70¼¼,80¼¼,90¼¼¸¸±â', '10,15,20³â³³', '¿ù³³, ¿¬³³', 'www.hi.co.kr/serviceAction.do','´ºÇÏÀÌÄ«¿îÀüÀÚ»óÇØº¸Çè.PNG' );
+values(insu_seq.nextval,'í˜„ëŒ€í•´ìƒ', 'ë‰´í•˜ì´ì¹´ìš´ì „ììƒí•´ë³´í—˜', 'ìš´ì „ì ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', 'ë§Œ18ì„¸~69ì„¸', '70ì„¸,80ì„¸,90ì„¸ë§Œê¸°', '10,15,20ë…„ë‚©', 'ì›”ë‚©, ì—°ë‚©', 'www.hi.co.kr/serviceAction.do','ë‰´í•˜ì´ì¹´ìš´ì „ììƒí•´ë³´í—˜.PNG' );
 insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuprice,insuper,payper,paycyc,link) 
-values(insu_seq.nextval,'Èï±¹È­Àç', 'µçµçÇÑSMILE¿îÀüÀÚÁ¾ÇÕº¸Çè(1Á¾_¿¬¸¸±â)', '¿îÀüÀÚ º¸Çè', 'ºñ°»½Å', '¸¸18~80¼¼','ÀüÈ­¹®ÀÇ', '3,5,7,10,15,20³â ¸¸±â', 'Àü±â³³,10³â³³,15³â³³', '', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=35' );
+values(insu_seq.nextval,'í¥êµ­í™”ì¬', 'ë“ ë“ í•œSMILEìš´ì „ìì¢…í•©ë³´í—˜(1ì¢…_ì—°ë§Œê¸°)', 'ìš´ì „ì ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ18~80ì„¸','ì „í™”ë¬¸ì˜', '3,5,7,10,15,20ë…„ ë§Œê¸°', 'ì „ê¸°ë‚©,10ë…„ë‚©,15ë…„ë‚©', '', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=35' );
 
 
---¾Ïº¸Çè
-
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'MG¼ÕÇØº¸Çè', '(¹«)Ã³À½ºÎÅÍ ¿ÃÄÉ¾î ¾Ïº¸Çè', '¾Ï º¸Çè', 'ÀÏºÎ °»½Å', '0¼¼~ÃÖ´ë75¼¼', '80,90,100¼¼ ¸¸±â(Æ¯¾àº° »óÀÌ)', '10,15,20,25,30³â³³(Æ¯¾àº° »óÀÌ)', '¿ù³³', 'www.mggeneralins.com/IS011010DM.scp?menuId=MN0301007&inskdRpsntCd=220AO','Ã³À½ºÎÅÍ¿ÃÄÉ¾î¾Ïº¸Çè.PNG' );
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Èï±¹È­Àç', '(¹«)Çàº¹À»ÒıÁÖ´Â°¡Á·»ç¶ûÁ¾ÇÕº¸Çè(22.04)(2Á¾)(¾ÏÇÃ·£)', '¾Ï º¸Çè', 'ºñ°»½Å', '¸¸15¼¼~ÃÖ´ë70¼¼(º¸Çè±â°£º°, ³³ÀÔ±â°£º°, Æ¯¾àº° »óÀÌ)', '80¼¼,90¼¼,100¼¼¸¸±â', '10,15,20,25,30³â³³', '¿ù³³', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=28','Çàº¹À»´ÙÁÖ´Â°¡Á·»ç¶ûÁ¾ÇÕº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DB¼ÕÇØº¸Çè', '(¹«)ÇÁ·Î¹Ì¶óÀÌÇÁ ÂüÁÁÀºÈÑ¹Ğ¸®´õºíÇÃ·¯½ºÁ¾ÇÕº¸Çè2204(¾ÏÇÃ·£)', '¾Ï º¸Çè', 'ºñ°»½Å', '¸¸15¼¼~ÃÖ´ë75¼¼(´Ü,ÀÏºÎÆ¯¾àÀº 60~70¼¼±îÁö °¡ÀÔ°¡´É)', '80,90,100¼¼ ¸¸±â(´Ü,ÀÏºÎÆ¯¾àÀº 20³â¸¸±â)', '10³â,15³â,20³â,25³â,30³â³³', '¿ù³²', 'www.idbins.com/FWMALV0840.do','ÇÁ·Î¹Ì¶óÀÌÇÁÂüÁÁÀºÈÑ¹Ğ¸®´õºíÇÃ·¯½ºÁ¾ÇÕº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DB¼ÕÇØº¸Çè', '(¹«)New I`m OK ¾Ïº¸Çè(1Á¾)', '¾Ï º¸Çè', 'ºñ°»½Å', '0¼¼~70¼¼', '90¼¼, 100¼¼', '10,15,20,25,30³â³³', '¿ù³³', 'www.idbins.com/FWMALV6033.do','newImOK¾Ïº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'KB¼ÕÇØº¸Çè', '(¹«)KB¾Ïº¸Çè°ú °Ç°­ÇÏ°Ô»ç´ÂÀÌ¾ß±â', '¾Ï º¸Çè', 'ÀÏºÎ °»½Å', '0¼¼~75¼¼', '80¼¼,90¼¼,100¼¼¸¸±â', '10,15,20,25,30³â³³', '¿ù³³', 'www.kbinsure.co.kr/CG302260001.ec','kb¾Ïº¸Çè°ú°Ç°­ÇÏ°Ô»ç´ÂÀÌ¾ß±â.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'NH¼ÕÇØº¸Çè', '(¹«)NH´ÙÀÌ·ºÆ® ¾Ïº¸Çè', '¾Ï º¸Çè', '°»½Å', '¸¸19~70¼¼', '10/20/30³â ÀÚµ¿°»½Å(°»½ÅÁ¾·á³ªÀÌ:100¼¼)', 'Àü±â³³', '¿ù³³', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D411211','nh´ÙÀÌ·ºÆ®¾Ïº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, '¶óÀÌ³ª»ı¸í', '(¹«)´º½Ç¹ö¾Ïº¸Çè(°»½ÅÇü)', '¾Ï º¸Çè', '°»½Å', '1Çü(½Ç¹öÇü):61~80¼¼/2Çü(À¯º´ÀÚÇü):61~70¼¼', '10³â¸¸±â °»½ÅÇö(ÃÖÀå 100¼¼±îÁö º¸Àå)', 'Àü±â³³', '¿ù³³', 'direct.e-lina.co.kr/mall/P00179_01.htm?t=SA_2107_A_db_2b&adtype=WEB_SA&media=GOOGLE_direct','´º½Ç¹ö¾Ïº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, '·Ôµ¥¼ÕÇØº¸Çè', '(¹«)let:smile Á¾ÇÕ°Ç°­º¸Çè(´õ²ø¸² ÇÃ·¯½º)(2201)(¹«ÇØÁöÇü)(¾ÏÇÃ·£)', '¾Ï º¸Çè', 'ºñ°»½Å', '15¼¼~70¼¼(´Ü, º¸Çè±â°£/³³ÀÔ±â°£º° »óÀÌ)', '4Á¾:100¼¼¸¸±â(Æ¯¾àº° »óÀÌ)', '20,25,30³â³³(´Ü, Æ¯¾àº°, °¡ÀÔ¿¬·Éº° »óÀÌ)', '¿ù³³', 'www.lotteinsumall.com/cancer.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAlBMkFawZiMrpmgcMoLsEloEYSSt95bBIGYpXe-ap9vwfRRUKU1uVcaAlHHEALw_wcB','letsmileÁ¾ÇÕ°Ç°­º¸Çè_´õ²ø¸²ÇÃ·¯½º.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ÇÑÈ­¼ÕÇØº¸Çè', '¹«¹è´ç ¸¶ÀÌ¶óÀÌÇÁ ÇÑ¾Æ¸§Á¾ÇÕº¸Çè(¾ÏÇÃ·£)', '¾Ï º¸Çè', 'ÀÏºÎ°»½Å', '¸¸15¼¼~ÃÖ´ë70¼¼', '¼¼¸¸±â : 80¼¼, 90¼¼, 100¼¼, 110¼¼¸¸±â (Æ¯¾àº° »óÀÌ)/°»½ÅÆ¯¾à : 3³â, 20³â¸¸±â/¿¬¸¸±â : 10³â,15³â,20³â¸¸±â', '10,15,20,25,30³â³³', '¿ù³³', 'www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01381001','mylifeÇÑ¾Æ¸§Á¾ÇÕº¸Çè_¾ÏÇÃ·£.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ÇÑÈ­¼ÕÇØº¸Çè', 'LIFEPLUSEÃ³À½ºÎÅÍÁöÄÑÁÖ´Â¾Ïº¸Çè', '¾Ï º¸Çè', '°»½Å', '10³â¸¸±â:30-80¼¼/20³â¸¸±â:30-80¼¼/30³â¸¸±â:6-70¼¼', '10³â/20³â/30³â ¸¸±â(ÃÖÁ¾ °»½Å°è¾àÀÇ ¸¸±âÀÏÀº ÇÇº¸ÇèÀÚÀÇ º¸Çè³ªÀÌ 100¼¼ °è¾àÇØ´çÀÏ·Î ÇÔ)', 'Àü±â³³', '¿ù³³', 'www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01864001','lifeplusÃ³À½ºÎÅÍÁöÄÑÁÖ´Â¾Ïº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Çö´ëÇØ»ó', '(¹«)°è¼Ó¹Ş´Â ¾Ïº¸Çè(Hi2108)', '¾Ï º¸Çè', 'ÀÏºÎ°»½Å', '0¼¼~68¼¼(º¸Àåº° °¡ÀÔ³ªÀÌ »óÀÌ)', '1Á¾:10,15,20,30³â ¸¸±â/2Á¾:80,90,100¼¼ ¸¸±â', '1Á¾:Àü±â³³/2Á¾:10,15,20,25,30³â³³', '¿ù³³,¿¬³³', 'www.hi.co.kr/serviceAction.do','°è¼Ó¹Ş´Â¾Ïº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Èï±¹È­Àç', '(¹«)Çàº¹À»ÒıÁÖ´Â°¡Á·»ç¶ûÁ¾ÇÕº¸Çè(22.01)(1Á¾)(¾ÏÇÃ·£)', '¾Ï º¸Çè', 'ºñ°»½Å', '¸¸15¼¼~ÃÖ´ë70¼¼', '80¼¼,90¼¼,100¼¼¸¸±â(ÀÏºÎÆ¯¾à »óÀÌ)', '10,15,20,25,30³â³³', '¿ù³³,¿¬³³', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=28','Çàº¹À»´ÙÁÖ´Â°¡Á·»ç¶ûÁ¾ÇÕº¸Çè.PNG');
-
---Ä¡¾Æº¸Çè -----
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'DB¼ÕÇØº¸Çè', 'ÂüÁÁÀºÄ¡¾Æ»ç¶ûº¸Çè', 'Ä¡¾Æ º¸Çè', '°»½Å', '6~70¼¼', '7,15,20³â¸¸±â ÀÚµ¿°»½Å(ÃÖ´ë80¼¼±îÁö)', 'Àü±â³³', '¿ù³³,¿¬³³', 'www.idbins.com/FWMALV0709.do','ÂüÁÁÀºÄ¡¾Æ»ç¶ûº¸Çè.PNG' );
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'KB¼ÕÇØº¸Çè', 'KB The°Ç°­ÇÑÄ¡¾Æº¸Çè', 'Ä¡¾Æ º¸Çè', '°»½Å', '¸¸2¼¼~70¼¼', '5, 10, 15, 20³â¸¸±â °»½ÅÇü (°»½ÅÁ¾·á: 80¼¼)', 'Àü±â³³', '¿ù³³, 3¿ù³³, 6¿ù³³, ¿¬³³', 'www.kbinsure.co.kr/CG302130001.ec', 'the°Ç°­ÇÑÄ¡¾Æº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'¶óÀÌ³ª»ı¸í', 'THE°Ç°­ÇÑÄ¡¾Æº¸ÇèV', 'Ä¡¾Æ º¸Çè', '°»½Å', '0¼¼~75¼¼(´Ü, 10³â¸¸±â´Â ÃÖ´ë 70¼¼)', '5³â ¸¸±â , 10³â¸¸±â °»½ÅÇü (ÃÖÀå 80¼¼±îÁö º¸Àå)', 'Àü±â³³', '¿ù³³', 'www.lina.co.kr/product/productView/productView_P00198.htm','the°Ç°­ÇÑÄ¡¾Æº¸Çèv.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'»ï¼ºÈ­Àç', 'Ä¡¾Æº¸Çè µ§Å»ÆÄÆ®³Ê', 'Ä¡¾Æ º¸Çè', 'ºñ°»½Å', '2¼¼~70¼¼', '5,10,15,20³â¸¸±â °»½ÅÇü(ÃÖ´ë 100¼¼¸¸±â)', 'Àü±â³³', '¿ù³³', 'www.samsungfire.com/util/P_C02_02_03_03.html','µ§Å»ÆÄÆ®³Ê.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'Çö´ëÇØ»ó', '¹à°Ô¿ô´Â¾ó±¼Ä¡¾Æº¸Çè', 'Ä¡¾Æ º¸Çè', '°»½Å', '15¼¼~ÃÖ´ë70¼¼', '5,10,15,20³â¸¸±â °»½ÅÇü(ÃÖ´ë 80¼¼ ¸¸±â)', 'Àü±â³³', '¿ù³³', 'www.hi.co.kr/serviceAction.do','¹à°Ô¿ô´Â¾ó±¼Ä¡¾Æº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'Èï±¹È­Àç', 'Èï±¹È­Àç ÀÌÆ°Æ°ÇÑÄ¡¾Æº¸Çè(1Á¾)', 'Ä¡¾Æ º¸Çè', '°»½Å', '6¼¼~(°»½ÅÁ¾·á³ªÀÌ-10', '10,15³â °»½ÅÇü(60,70,80¼¼ ¸¸±â)', 'Àü±â³³', '', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=259#empty-ahchor','¹®ÀÇ.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'Èï±¹È­Àç', 'Èï±¹È­Àç ÀÌÆ°Æ°ÇÑÄ¡¾Æº¸Çè(2Á¾)', 'Ä¡¾Æ º¸Çè', 'ºñ°»½Å', '6¼¼~ÃÖ´ë70¼¼', '60,70,80¼¼ ¸¸±â', '5,10,15,20,25³â³³', '¿ù³³,2°³¿ù³³,3°³¿ù³³,6°³¿ù³³,¿¬³³', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=259#empty-ahchor','¹®ÀÇ.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'Èï±¹»ı¸í', '¹Ì¼Ò±ÂÄ¡¾Æº¸Çè', 'Ä¡¾Æ º¸Çè', '°»½Å', '2¼¼~70¼¼', '5,10,15,20³â ¸¸±â', 'Àü±â³³', '¿ù³³', 'www.heungkuklife.co.kr/','¹®ÀÇ.PNG');
-
---Á¾½Å/Á¤±â º¸Çè
-insert into insu values(insu_seq.nextval, 'Èï±¹»ı¸í', '´Ù»ç¶ûÂøÇÑÁ¾½Åº¸Çè', 'Á¾½Å/Á¤±âº¸Çè', '°»½Å', '¹®ÀÇ.PNG', '15¼¼~68¼¼', 'Á¾½Å', '20³â,30³â³³', '¿ù³³', 'ÇØÁöÈ¯±Ş±İ ¹ÌÁö±ŞÇüÀÔ´Ï´Ù.', 'µ¿ÀÇ', 'www.heungkuklife.co.kr');
-insert into insu values(insu_seq.nextval, '¸Ş¸®Ã÷È­Àç', '¸Ş¸®Ã÷¿Ã¹Ù¸¥Á¤±âº¸Çè', 'Á¾½Å/Á¤±âº¸Çè', 'ÀÚµ¿°»½Å', '¹®ÀÇ.PNG', '15¼¼~80¼¼', '10,20,30³â¸¸±â', 'Àü±â³³', '¿ù³³', '»ıÈ°¾ÈÁ¤ÀÚ±İ º¸Àå', 'µ¿ÀÇ', 'cancerok.com/common/popup/insu/rule.html?b_rule=1637051918.pdf');
-insert into insu values(insu_seq.nextval, 'Èï±¹»ı¸í', '¿Â¶óÀÎÁ¤±âº¸Çè', 'Á¾½Å/Á¤±âº¸Çè', 'ºñ°»½Å', '¹®ÀÇ.PNG', '19¼¼~60¼¼', '60¼¼¸¸±â,80¼¼¸¸±â', '10³â,20³â³³', '¿ù³³', 'ºñÈí¿¬ÀÚ º¸Çè·á ÇÒÀÎ', 'µ¿ÀÇ', 'online.heungkuklife.co.kr/pcw/main/main.do');
 
 
--
---½Å»ı¾Æ/ÅÂ¾Æº¸Çè
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DB¼ÕÇØº¸Çè', '½Ç¼ÕÀÇ·áºñº¸Çè(½Å»ı¾Æ)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', '°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄºÎÅÍ º¸Àå)', '1³â¸¸±â(º¸Àå³»¿ë º¯°æÁÖ±â : ÃÖ´ë 5³â)', 'Àü±â³³', '¿ù³³,3°³¿ù³³,6°³¿ù³³,¿¬³³', 'www.idbins.com/FWMALV0723.do','DB½Ç¼ÕÀÇ·áºñº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'KB¼ÕÇØº¸Çè', '(¹«)KB±İÂÊ°°ÀºÀÚ³àº¸Çè(ÇØÁöÈ¯±Ş±İ¹ÌÁö±ŞÇü)(22.02)(ÀÚ³àÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ÀÏºÎ °»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄºÎÅÍ º¸Àå)~º¸Çè³ªÀÌ30¼¼', '90¼¼,100¼¼,110¼¼¸¸±â', '20,25,30³â³³', '¿ù³³,3°³¿ù³³,6°³¿ù³³,¿¬³³', 'www.kbinsure.co.kr/CG302010001.ec','kb±İÂÊ°°ÀºÀÚ³àº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DB¼ÕÇØº¸Çè', '(¹«)ÇÁ·Î¹Ì¶óÀÌÇÁ ¾ÆÀÌ(I)·¯ºê(LOVE)°Ç°­º¸Çè2004(½Å»ı¾ÆÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ºñ°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄ º¸Àå)', '(Ãâ»ıÀÌÈÄ)1010¼¼ ¸¸±â(ÀÏºÎÆ¯¾à 1³â,20¼¼,30¼¼,80¼¼ ¸¸±â)', '10,15,20,25,30³â³³', '¿ù³³,3°³¿ù³³,6°³¿ù³³,¿¬³³', 'dbinsure.co.kr/kids?JEHUSA_CD=C5208&utm_medium=cpc&utm_source=naver&utm_campaign=pc&utm_content=kids&utm_term=move','¾ÆÀÌ·¯ºêÇÃ·¯½º°Ç°­º¸Çè_½Å»ı¾ÆÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DB¼ÕÇØº¸Çè', '(¹«)ÇÁ·Î¹Ì¶óÀÌÇÁ¾ÆÀÌ(I)·¯ºê(LOVE)ÇÃ·¯½º°Ç°­º¸Çè2204(ÀÚ³àÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ÀÏºÎ °»½Å', '0¼¼~30¼¼', '100¼¼ ¸¸±â(ÀÏºÎÆ¯¾à 80¼¼ ¸¸±â)', '20,25,30³â³³', '¿ù³³', 'dbinsure.co.kr/kids?JEHUSA_CD=C5208&utm_medium=cpc&utm_source=naver&utm_campaign=pc&utm_content=kids&utm_term=move','¾ÆÀÌ·¯ºêÇÃ·¯½º°Ç°­º¸Çè_ÀÚ³àÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'NH³óÇù¼ÕÇØº¸Çè', '(¹«)NH°¡¼ººñ±ÂÇÃ·¯½º¾î¸°ÀÌº¸Çè2201(1Á¾_ÇØÁöÈ¯±Ş±İ¹ÌÁö±ŞÇü¥±)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ÀÏºÎ °»½Å', '0¼¼(ÅÂ¾ÆÁ¦¿Ü)~30¼¼', '80¼¼,90¼¼,100¼¼', '20³â,25³â,30³â³³', '¿ù³³', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D312116','nh°¡¼ººñ±ÂÇÃ·¯½º¾î¸°ÀÌº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, '¸Ş¸®Ã÷È­Àç', '(¹«)³»Mom°°Àº º£ÀÌºñº¸Çè2201(½Å»ı¾ÆÁ¾ÇÕÇü)','¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ºñ°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄ º¸Àå)', '80¼¼,90¼¼,100¼¼', '20,25,30³â³³', '¿ù³³', 'store.meritzfire.com/health-and-kids/mom-baby.do#!/','³»mom°°Àºº£ÀÌºñº¸Çè_½Å»ı¾ÆÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, '¸Ş¸®Ã÷È­Àç', '(¹«)³»Mom°°Àº ¾î¸°ÀÌº¸Çè2201(ÀÚ³àÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ºñ°»½Å', '1¼¼~30¼¼', '80¼¼,90¼¼,100¼¼ ¸¸±â', '10,20,25,30³â³³', '¿ù³³', 'store.meritzfire.com/health-and-kids/mom-kid.do#!/','³»mom°°Àº¾î¸°ÀÌº¸Çè_ÀÚ³àÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, '·Ôµ¥¼ÕÇØº¸Çè', '(¹«)let:play ÀÚ³àº¸Çè(µµ´ãµµ´ã)(¹«ÇØÁöÇü)(2201)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ºñ°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄ º¸Àå)~30¼¼(´Ü,º¸Çè±â°£/³³ÀÔ±â°£º° »óÀÌ)', '9Á¾:100¼¼¸¸±â(Æ¯¾àº° »óÀÌ)', '20,25,30³â³³(´Ü,Æ¯¾àº°, °¡ÀÔ¿¬·Éº° »óÀÌ)', '¿ù³³', 'www.lotteinsumall.com/child.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAlBMkFawZiMrpmgcMoLsEloEYSSt95bBIGYpXe-ap9vwfRRUKU1uVcaAlHHEALw_wcB','letplayÀÚ³àº¸Çè.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Çö´ëÇØ»ó', '(¹«)±Â¾Ø±Â¾î¸°ÀÌÁ¾ÇÕº¸ÇèQ(Hi2201)(½Å»ı¾ÆÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ºñ°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄ º¸Àå)', '10,20,30,80,90,100¼¼ ¸¸±â(Æ¯¾àº° »óÀÌ)', '5³â,10³â,15³â,20³â,30³â³³,Àü±â³³,ÀÏ½Ã³³(Æ¯¾àº° »óÀÌ)', '¿ù³³', 'www.hi.co.kr/serviceAction.do','±Â¾Ø±Â¾î¸°ÀÌÁ¾ÇÕº¸Çèq_½Å»ı¾ÆÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Çö´ëÇØ»ó', '(¹«)±Â¾Ø±Â ¾î¸°ÀÌÁ¾ÇÕº¸ÇèQ(Hi2201)(ÀÚ³àÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ÀÏºÎ °»½Å', '0¼¼~14¼¼', '10,20,30,80,90,100¼¼ ¸¸±â(Æ¯¾àº° »óÀÌ)', '5³â,10³â,15³â,20³â,25³â,30³â³³,ÀÏ½Ã³³(Æ¯¾àº° »óÀÌ)', '¿ù³³', 'www.hi.co.kr/serviceAction.do','±Â¾Ø±Â¾î¸°ÀÌÁ¾ÇÕº¸Çèq_ÀÚ³àÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, '»ï¼ºÈ­Àç', '(¹«)½Ç¼ÕÀÇ·áºñº¸Çè(½Å»ı¾Æ)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', '°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄºÎÅÍ º¸Àå)', '1³â¸¸±â (º¸Àå³»¿ë º¯°æÁÖ±â : ÃÖ´ë 5³â)', 'Àü±â³³', '¿ù³³','www.samsungfire.com/product/P_P02_03_04_075.html','»ï¼º½Ç¼ÕÀÇ·áºñº¸Çè_½Å»ı¾Æ.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, '»ï¼ºÈ­Àç', '(¹«)½Ç¼ÕÀÇ·áºñº¸Çè(ÀÚ³à)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', '°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄ º¸Àå)~65¼¼', '1³â¸¸±â (º¸Àå³»¿ë º¯°æÁÖ±â : ÃÖ´ë 5³â)', 'Àü±â³³', '¿ù³³,3°³¿ù³³,6°³¿ù³³,¿¬³³','www.samsungfire.com/product/P_P02_03_04_075.html','»ï¼º½Ç¼ÕÀÇ·áºñº¸Çè_ÀÚ³à.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ÇÑÈ­¼ÕÇØº¸Çè', 'LIFEPLUS Ã³À½ºÎÅÍ ÇÔ²²ÇÏ´Â ÀÚ³àº¸Çè2111(±âº»Çü)(ÀÚ³àÇÃ·£)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ÀÏºÎ °»½Å', '0¼¼~30¼¼(º¸Çè±â°£º°,Æ¯¾àº° »óÀÌ)', '20,30,44,80,90,100¼¼ ¸¸±â(Æ¯¾àº° »óÀÌ)(´Ü, °»½Å°è¾àÀº 1³â,3³â¸¸±â Æ¯¾àº° »óÀÌ)', '10,15,20,25,30³â³³(Æ¯¾àº° »óÀÌ)(´Ü, °»½Å°è¾à±Ù Àü±â³³)', '¿ù³³', 'www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01392002','lifeplusÃ³À½ºÎÅÍÇÔ²²ÇÏ´ÂÀÚ³àº¸Çè_ÀÚ³àÇÃ·£.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ÇÑÈ­¼ÕÇØº¸Çè', 'LIFEPLUS Ã³À½ºÎÅÍ ÇÔ²²ÇÏ´Â ÀÚ³àº¸Çè2111(±âº»Çü)(½Å»ı¾ÆÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', '°»½Å', 'ÅÂ¾Æ', '20,30,55,80,90,100¼¼ ¸¸±â(´Ü,ÀÏºÎÆ¯¾à »óÀÌ)', '10,15,20,25,30³â³³(Æ¯¾àº°»óÀÌ)(´Ü,°»½Å°è¾àÀº Àü±â³³)', '¿ù³³(´Ü,ÀÏºÎÆ¯¾à ÀÏ½Ã³³)','www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01392002','lifeplusÃ³À½ºÎÅÍÇÔ²²ÇÏ´ÂÀÚ³àº¸Çè_½Å»ı¾Æ.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Èï±¹È­Àç', '(¹«)Èï±¹È­Àç¸¾ÆíÇÑÀÚ³à»ç¶ûº¸Çè(22.01)(2Á¾)(½Å»ı¾ÆÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ºñ°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄºÎÅÍ º¸Àå)', '80¼¼,90¼¼,100¼¼ ¸¸±â', '10³â,15³â,20³â,25³â,30³â³³', '¿ù³³', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=658#empty-ahchor','¸¾ÆíÇÑÀÚ³à»ç¶ûº¸Çè_½Å»ı¾ÆÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Èï±¹È­Àç', '(¹«)Èï±¹È­Àç¸¾ÆíÇÑÀÚ³à»ç¶ûº¸Çè(22.04)(2Á¾)(ÀÚ³àÁ¾ÇÕÇü)', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ºñ°»½Å', 'ÅÂ¾Æ(Ãâ»ıÀÌÈÄºÎÅÍ º¸Àå)~¸¸30¼¼', '80¼¼,90¼¼,100¼¼ ¸¸±â(Æ¯¾àº° »óÀÌ)', '10³â,115³â,20³â,25³â,30³â³³(Æ¯¾àº° »óÀÌ)', '¿ù³³', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=658#empty-ahchor','¸¾ÆíÇÑÀÚ³à»ç¶ûº¸Çè_ÀÚ³àÁ¾ÇÕÇü.PNG');
-insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'Èï±¹»ı¸í', '(¹«)´ÙÀç´Ù´É¾î¸°ÀÌÁ¾ÇÕº¸Çè', '¾î¸°ÀÌ/ÅÂ¾Æ º¸Çè', 'ÀÏºÎ°»½Å', '0~30¼¼', '1Á¾:90¼¼,100¼¼ ¸¸±â/2Á¾:30¼¼,90¼¼,100¼¼ ¸¸±â', '20³â,30³â³³', '¿ù³³', 'www.heungkuklife.co.kr/','¹®ÀÇ.PNG');
+
+--ì•”ë³´í—˜
+
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'MGì†í•´ë³´í—˜', '(ë¬´)ì²˜ìŒë¶€í„° ì˜¬ì¼€ì–´ ì•”ë³´í—˜', 'ì•” ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', '0ì„¸~ìµœëŒ€75ì„¸', '80,90,100ì„¸ ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)', '10,15,20,25,30ë…„ë‚©(íŠ¹ì•½ë³„ ìƒì´)', 'ì›”ë‚©', 'www.mggeneralins.com/IS011010DM.scp?menuId=MN0301007&inskdRpsntCd=220AO','ì²˜ìŒë¶€í„°ì˜¬ì¼€ì–´ì•”ë³´í—˜.PNG' );
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í¥êµ­í™”ì¬', '(ë¬´)í–‰ë³µì„å¤šì£¼ëŠ”ê°€ì¡±ì‚¬ë‘ì¢…í•©ë³´í—˜(22.04)(2ì¢…)(ì•”í”Œëœ)', 'ì•” ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ15ì„¸~ìµœëŒ€70ì„¸(ë³´í—˜ê¸°ê°„ë³„, ë‚©ì…ê¸°ê°„ë³„, íŠ¹ì•½ë³„ ìƒì´)', '80ì„¸,90ì„¸,100ì„¸ë§Œê¸°', '10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=28','í–‰ë³µì„ë‹¤ì£¼ëŠ”ê°€ì¡±ì‚¬ë‘ì¢…í•©ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DBì†í•´ë³´í—˜', '(ë¬´)í”„ë¡œë¯¸ë¼ì´í”„ ì°¸ì¢‹ì€í›¼ë°€ë¦¬ë”ë¸”í”ŒëŸ¬ìŠ¤ì¢…í•©ë³´í—˜2204(ì•”í”Œëœ)', 'ì•” ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ15ì„¸~ìµœëŒ€75ì„¸(ë‹¨,ì¼ë¶€íŠ¹ì•½ì€ 60~70ì„¸ê¹Œì§€ ê°€ì…ê°€ëŠ¥)', '80,90,100ì„¸ ë§Œê¸°(ë‹¨,ì¼ë¶€íŠ¹ì•½ì€ 20ë…„ë§Œê¸°)', '10ë…„,15ë…„,20ë…„,25ë…„,30ë…„ë‚©', 'ì›”ë‚¨', 'www.idbins.com/FWMALV0840.do','í”„ë¡œë¯¸ë¼ì´í”„ì°¸ì¢‹ì€í›¼ë°€ë¦¬ë”ë¸”í”ŒëŸ¬ìŠ¤ì¢…í•©ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DBì†í•´ë³´í—˜', '(ë¬´)New I`m OK ì•”ë³´í—˜(1ì¢…)', 'ì•” ë³´í—˜', 'ë¹„ê°±ì‹ ', '0ì„¸~70ì„¸', '90ì„¸, 100ì„¸', '10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©', 'www.idbins.com/FWMALV6033.do','newImOKì•”ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'KBì†í•´ë³´í—˜', '(ë¬´)KBì•”ë³´í—˜ê³¼ ê±´ê°•í•˜ê²Œì‚¬ëŠ”ì´ì•¼ê¸°', 'ì•” ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', '0ì„¸~75ì„¸', '80ì„¸,90ì„¸,100ì„¸ë§Œê¸°', '10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©', 'www.kbinsure.co.kr/CG302260001.ec','kbì•”ë³´í—˜ê³¼ê±´ê°•í•˜ê²Œì‚¬ëŠ”ì´ì•¼ê¸°.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'NHì†í•´ë³´í—˜', '(ë¬´)NHë‹¤ì´ë ‰íŠ¸ ì•”ë³´í—˜', 'ì•” ë³´í—˜', 'ê°±ì‹ ', 'ë§Œ19~70ì„¸', '10/20/30ë…„ ìë™ê°±ì‹ (ê°±ì‹ ì¢…ë£Œë‚˜ì´:100ì„¸)', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D411211','nhë‹¤ì´ë ‰íŠ¸ì•”ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ë¼ì´ë‚˜ìƒëª…', '(ë¬´)ë‰´ì‹¤ë²„ì•”ë³´í—˜(ê°±ì‹ í˜•)', 'ì•” ë³´í—˜', 'ê°±ì‹ ', '1í˜•(ì‹¤ë²„í˜•):61~80ì„¸/2í˜•(ìœ ë³‘ìí˜•):61~70ì„¸', '10ë…„ë§Œê¸° ê°±ì‹ í˜„(ìµœì¥ 100ì„¸ê¹Œì§€ ë³´ì¥)', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'direct.e-lina.co.kr/mall/P00179_01.htm?t=SA_2107_A_db_2b&adtype=WEB_SA&media=GOOGLE_direct','ë‰´ì‹¤ë²„ì•”ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ë¡¯ë°ì†í•´ë³´í—˜', '(ë¬´)let:smile ì¢…í•©ê±´ê°•ë³´í—˜(ë”ëŒë¦¼ í”ŒëŸ¬ìŠ¤)(2201)(ë¬´í•´ì§€í˜•)(ì•”í”Œëœ)', 'ì•” ë³´í—˜', 'ë¹„ê°±ì‹ ', '15ì„¸~70ì„¸(ë‹¨, ë³´í—˜ê¸°ê°„/ë‚©ì…ê¸°ê°„ë³„ ìƒì´)', '4ì¢…:100ì„¸ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)', '20,25,30ë…„ë‚©(ë‹¨, íŠ¹ì•½ë³„, ê°€ì…ì—°ë ¹ë³„ ìƒì´)', 'ì›”ë‚©', 'www.lotteinsumall.com/cancer.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAlBMkFawZiMrpmgcMoLsEloEYSSt95bBIGYpXe-ap9vwfRRUKU1uVcaAlHHEALw_wcB','letsmileì¢…í•©ê±´ê°•ë³´í—˜_ë”ëŒë¦¼í”ŒëŸ¬ìŠ¤.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í•œí™”ì†í•´ë³´í—˜', 'ë¬´ë°°ë‹¹ ë§ˆì´ë¼ì´í”„ í•œì•„ë¦„ì¢…í•©ë³´í—˜(ì•”í”Œëœ)', 'ì•” ë³´í—˜', 'ì¼ë¶€ê°±ì‹ ', 'ë§Œ15ì„¸~ìµœëŒ€70ì„¸', 'ì„¸ë§Œê¸° : 80ì„¸, 90ì„¸, 100ì„¸, 110ì„¸ë§Œê¸° (íŠ¹ì•½ë³„ ìƒì´)/ê°±ì‹ íŠ¹ì•½ : 3ë…„, 20ë…„ë§Œê¸°/ì—°ë§Œê¸° : 10ë…„,15ë…„,20ë…„ë§Œê¸°', '10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©', 'www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01381001','mylifeí•œì•„ë¦„ì¢…í•©ë³´í—˜_ì•”í”Œëœ.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í•œí™”ì†í•´ë³´í—˜', 'LIFEPLUSEì²˜ìŒë¶€í„°ì§€ì¼œì£¼ëŠ”ì•”ë³´í—˜', 'ì•” ë³´í—˜', 'ê°±ì‹ ', '10ë…„ë§Œê¸°:30-80ì„¸/20ë…„ë§Œê¸°:30-80ì„¸/30ë…„ë§Œê¸°:6-70ì„¸', '10ë…„/20ë…„/30ë…„ ë§Œê¸°(ìµœì¢… ê°±ì‹ ê³„ì•½ì˜ ë§Œê¸°ì¼ì€ í”¼ë³´í—˜ìì˜ ë³´í—˜ë‚˜ì´ 100ì„¸ ê³„ì•½í•´ë‹¹ì¼ë¡œ í•¨)', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01864001','lifeplusì²˜ìŒë¶€í„°ì§€ì¼œì£¼ëŠ”ì•”ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í˜„ëŒ€í•´ìƒ', '(ë¬´)ê³„ì†ë°›ëŠ” ì•”ë³´í—˜(Hi2108)', 'ì•” ë³´í—˜', 'ì¼ë¶€ê°±ì‹ ', '0ì„¸~68ì„¸(ë³´ì¥ë³„ ê°€ì…ë‚˜ì´ ìƒì´)', '1ì¢…:10,15,20,30ë…„ ë§Œê¸°/2ì¢…:80,90,100ì„¸ ë§Œê¸°', '1ì¢…:ì „ê¸°ë‚©/2ì¢…:10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©,ì—°ë‚©', 'www.hi.co.kr/serviceAction.do','ê³„ì†ë°›ëŠ”ì•”ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í¥êµ­í™”ì¬', '(ë¬´)í–‰ë³µì„å¤šì£¼ëŠ”ê°€ì¡±ì‚¬ë‘ì¢…í•©ë³´í—˜(22.01)(1ì¢…)(ì•”í”Œëœ)', 'ì•” ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë§Œ15ì„¸~ìµœëŒ€70ì„¸', '80ì„¸,90ì„¸,100ì„¸ë§Œê¸°(ì¼ë¶€íŠ¹ì•½ ìƒì´)', '10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©,ì—°ë‚©', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=28','í–‰ë³µì„ë‹¤ì£¼ëŠ”ê°€ì¡±ì‚¬ë‘ì¢…í•©ë³´í—˜.PNG');
+
+
+
+--ì¹˜ì•„ë³´í—˜ -----
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'DBì†í•´ë³´í—˜', 'ì°¸ì¢‹ì€ì¹˜ì•„ì‚¬ë‘ë³´í—˜', 'ì¹˜ì•„ ë³´í—˜', 'ê°±ì‹ ', '6~70ì„¸', '7,15,20ë…„ë§Œê¸° ìë™ê°±ì‹ (ìµœëŒ€80ì„¸ê¹Œì§€)', 'ì „ê¸°ë‚©', 'ì›”ë‚©,ì—°ë‚©', 'www.idbins.com/FWMALV0709.do','ì°¸ì¢‹ì€ì¹˜ì•„ì‚¬ë‘ë³´í—˜.PNG' );
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'KBì†í•´ë³´í—˜', 'KB Theê±´ê°•í•œì¹˜ì•„ë³´í—˜', 'ì¹˜ì•„ ë³´í—˜', 'ê°±ì‹ ', 'ë§Œ2ì„¸~70ì„¸', '5, 10, 15, 20ë…„ë§Œê¸° ê°±ì‹ í˜• (ê°±ì‹ ì¢…ë£Œ: 80ì„¸)', 'ì „ê¸°ë‚©', 'ì›”ë‚©, 3ì›”ë‚©, 6ì›”ë‚©, ì—°ë‚©', 'www.kbinsure.co.kr/CG302130001.ec', 'theê±´ê°•í•œì¹˜ì•„ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'ë¼ì´ë‚˜ìƒëª…', 'THEê±´ê°•í•œì¹˜ì•„ë³´í—˜V', 'ì¹˜ì•„ ë³´í—˜', 'ê°±ì‹ ', '0ì„¸~75ì„¸(ë‹¨, 10ë…„ë§Œê¸°ëŠ” ìµœëŒ€ 70ì„¸)', '5ë…„ ë§Œê¸° , 10ë…„ë§Œê¸° ê°±ì‹ í˜• (ìµœì¥ 80ì„¸ê¹Œì§€ ë³´ì¥)', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'www.lina.co.kr/product/productView/productView_P00198.htm','theê±´ê°•í•œì¹˜ì•„ë³´í—˜v.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'ì‚¼ì„±í™”ì¬', 'ì¹˜ì•„ë³´í—˜ ë´íƒˆíŒŒíŠ¸ë„ˆ', 'ì¹˜ì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', '2ì„¸~70ì„¸', '5,10,15,20ë…„ë§Œê¸° ê°±ì‹ í˜•(ìµœëŒ€ 100ì„¸ë§Œê¸°)', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'www.samsungfire.com/util/P_C02_02_03_03.html','ë´íƒˆíŒŒíŠ¸ë„ˆ.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'í˜„ëŒ€í•´ìƒ', 'ë°ê²Œì›ƒëŠ”ì–¼êµ´ì¹˜ì•„ë³´í—˜', 'ì¹˜ì•„ ë³´í—˜', 'ê°±ì‹ ', '15ì„¸~ìµœëŒ€70ì„¸', '5,10,15,20ë…„ë§Œê¸° ê°±ì‹ í˜•(ìµœëŒ€ 80ì„¸ ë§Œê¸°)', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'www.hi.co.kr/serviceAction.do','ë°ê²Œì›ƒëŠ”ì–¼êµ´ì¹˜ì•„ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'í¥êµ­í™”ì¬', 'í¥êµ­í™”ì¬ ì´íŠ¼íŠ¼í•œì¹˜ì•„ë³´í—˜(1ì¢…)', 'ì¹˜ì•„ ë³´í—˜', 'ê°±ì‹ ', '6ì„¸~(ê°±ì‹ ì¢…ë£Œë‚˜ì´-10', '10,15ë…„ ê°±ì‹ í˜•(60,70,80ì„¸ ë§Œê¸°)', 'ì „ê¸°ë‚©', '', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=259#empty-ahchor','ë¬¸ì˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'í¥êµ­í™”ì¬', 'í¥êµ­í™”ì¬ ì´íŠ¼íŠ¼í•œì¹˜ì•„ë³´í—˜(2ì¢…)', 'ì¹˜ì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', '6ì„¸~ìµœëŒ€70ì„¸', '60,70,80ì„¸ ë§Œê¸°', '5,10,15,20,25ë…„ë‚©', 'ì›”ë‚©,2ê°œì›”ë‚©,3ê°œì›”ë‚©,6ê°œì›”ë‚©,ì—°ë‚©', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=259#empty-ahchor','ë¬¸ì˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval,'í¥êµ­ìƒëª…', 'ë¯¸ì†Œêµ¿ì¹˜ì•„ë³´í—˜', 'ì¹˜ì•„ ë³´í—˜', 'ê°±ì‹ ', '2ì„¸~70ì„¸', '5,10,15,20ë…„ ë§Œê¸°', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'www.heungkuklife.co.kr/','ë¬¸ì˜.PNG');
+
+
+
+--ì¢…ì‹ /ì •ê¸° ë³´í—˜
+insert into insu values(insu_seq.nextval, 'í¥êµ­ìƒëª…', 'ë‹¤ì‚¬ë‘ì°©í•œì¢…ì‹ ë³´í—˜', 'ì¢…ì‹ /ì •ê¸°ë³´í—˜', 'ê°±ì‹ ', 'ë¬¸ì˜.PNG', '15ì„¸~68ì„¸', 'ì¢…ì‹ ', '20ë…„,30ë…„ë‚©', 'ì›”ë‚©', 'í•´ì§€í™˜ê¸‰ê¸ˆ ë¯¸ì§€ê¸‰í˜•ì…ë‹ˆë‹¤.', 'ë™ì˜', 'www.heungkuklife.co.kr');
+insert into insu values(insu_seq.nextval, 'ë©”ë¦¬ì¸ í™”ì¬', 'ë©”ë¦¬ì¸ ì˜¬ë°”ë¥¸ì •ê¸°ë³´í—˜', 'ì¢…ì‹ /ì •ê¸°ë³´í—˜', 'ìë™ê°±ì‹ ', 'ë¬¸ì˜.PNG', '15ì„¸~80ì„¸', '10,20,30ë…„ë§Œê¸°', 'ì „ê¸°ë‚©', 'ì›”ë‚©', 'ìƒí™œì•ˆì •ìê¸ˆ ë³´ì¥', 'ë™ì˜', 'cancerok.com/common/popup/insu/rule.html?b_rule=1637051918.pdf');
+insert into insu values(insu_seq.nextval, 'í¥êµ­ìƒëª…', 'ì˜¨ë¼ì¸ì •ê¸°ë³´í—˜', 'ì¢…ì‹ /ì •ê¸°ë³´í—˜', 'ë¹„ê°±ì‹ ', 'ë¬¸ì˜.PNG', '19ì„¸~60ì„¸', '60ì„¸ë§Œê¸°,80ì„¸ë§Œê¸°', '10ë…„,20ë…„ë‚©', 'ì›”ë‚©', 'ë¹„í¡ì—°ì ë³´í—˜ë£Œ í• ì¸', 'ë™ì˜', 'online.heungkuklife.co.kr/pcw/main/main.do');
+
+
+
+--ì‹ ìƒì•„/íƒœì•„ë³´í—˜
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DBì†í•´ë³´í—˜', 'ì‹¤ì†ì˜ë£Œë¹„ë³´í—˜(ì‹ ìƒì•„)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ë¶€í„° ë³´ì¥)', '1ë…„ë§Œê¸°(ë³´ì¥ë‚´ìš© ë³€ê²½ì£¼ê¸° : ìµœëŒ€ 5ë…„)', 'ì „ê¸°ë‚©', 'ì›”ë‚©,3ê°œì›”ë‚©,6ê°œì›”ë‚©,ì—°ë‚©', 'www.idbins.com/FWMALV0723.do','DBì‹¤ì†ì˜ë£Œë¹„ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'KBì†í•´ë³´í—˜', '(ë¬´)KBê¸ˆìª½ê°™ì€ìë…€ë³´í—˜(í•´ì§€í™˜ê¸‰ê¸ˆë¯¸ì§€ê¸‰í˜•)(22.02)(ìë…€ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ë¶€í„° ë³´ì¥)~ë³´í—˜ë‚˜ì´30ì„¸', '90ì„¸,100ì„¸,110ì„¸ë§Œê¸°', '20,25,30ë…„ë‚©', 'ì›”ë‚©,3ê°œì›”ë‚©,6ê°œì›”ë‚©,ì—°ë‚©', 'www.kbinsure.co.kr/CG302010001.ec','kbê¸ˆìª½ê°™ì€ìë…€ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DBì†í•´ë³´í—˜', '(ë¬´)í”„ë¡œë¯¸ë¼ì´í”„ ì•„ì´(I)ëŸ¬ë¸Œ(LOVE)ê±´ê°•ë³´í—˜2004(ì‹ ìƒì•„ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ ë³´ì¥)', '(ì¶œìƒì´í›„)1010ì„¸ ë§Œê¸°(ì¼ë¶€íŠ¹ì•½ 1ë…„,20ì„¸,30ì„¸,80ì„¸ ë§Œê¸°)', '10,15,20,25,30ë…„ë‚©', 'ì›”ë‚©,3ê°œì›”ë‚©,6ê°œì›”ë‚©,ì—°ë‚©', 'dbinsure.co.kr/kids?JEHUSA_CD=C5208&utm_medium=cpc&utm_source=naver&utm_campaign=pc&utm_content=kids&utm_term=move','ì•„ì´ëŸ¬ë¸Œí”ŒëŸ¬ìŠ¤ê±´ê°•ë³´í—˜_ì‹ ìƒì•„ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'DBì†í•´ë³´í—˜', '(ë¬´)í”„ë¡œë¯¸ë¼ì´í”„ì•„ì´(I)ëŸ¬ë¸Œ(LOVE)í”ŒëŸ¬ìŠ¤ê±´ê°•ë³´í—˜2204(ìë…€ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', '0ì„¸~30ì„¸', '100ì„¸ ë§Œê¸°(ì¼ë¶€íŠ¹ì•½ 80ì„¸ ë§Œê¸°)', '20,25,30ë…„ë‚©', 'ì›”ë‚©', 'dbinsure.co.kr/kids?JEHUSA_CD=C5208&utm_medium=cpc&utm_source=naver&utm_campaign=pc&utm_content=kids&utm_term=move','ì•„ì´ëŸ¬ë¸Œí”ŒëŸ¬ìŠ¤ê±´ê°•ë³´í—˜_ìë…€ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'NHë†í˜‘ì†í•´ë³´í—˜', '(ë¬´)NHê°€ì„±ë¹„êµ¿í”ŒëŸ¬ìŠ¤ì–´ë¦°ì´ë³´í—˜2201(1ì¢…_í•´ì§€í™˜ê¸‰ê¸ˆë¯¸ì§€ê¸‰í˜•â…¡)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', '0ì„¸(íƒœì•„ì œì™¸)~30ì„¸', '80ì„¸,90ì„¸,100ì„¸', '20ë…„,25ë…„,30ë…„ë‚©', 'ì›”ë‚©', 'www.nhfire.co.kr/product/retrieveProduct.nhfire?pdtCd=D312116','nhê°€ì„±ë¹„êµ¿í”ŒëŸ¬ìŠ¤ì–´ë¦°ì´ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ë©”ë¦¬ì¸ í™”ì¬', '(ë¬´)ë‚´Momê°™ì€ ë² ì´ë¹„ë³´í—˜2201(ì‹ ìƒì•„ì¢…í•©í˜•)','ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ ë³´ì¥)', '80ì„¸,90ì„¸,100ì„¸', '20,25,30ë…„ë‚©', 'ì›”ë‚©', 'store.meritzfire.com/health-and-kids/mom-baby.do#!/','ë‚´momê°™ì€ë² ì´ë¹„ë³´í—˜_ì‹ ìƒì•„ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ë©”ë¦¬ì¸ í™”ì¬', '(ë¬´)ë‚´Momê°™ì€ ì–´ë¦°ì´ë³´í—˜2201(ìë…€ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', '1ì„¸~30ì„¸', '80ì„¸,90ì„¸,100ì„¸ ë§Œê¸°', '10,20,25,30ë…„ë‚©', 'ì›”ë‚©', 'store.meritzfire.com/health-and-kids/mom-kid.do#!/','ë‚´momê°™ì€ì–´ë¦°ì´ë³´í—˜_ìë…€ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ë¡¯ë°ì†í•´ë³´í—˜', '(ë¬´)let:play ìë…€ë³´í—˜(ë„ë‹´ë„ë‹´)(ë¬´í•´ì§€í˜•)(2201)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ ë³´ì¥)~30ì„¸(ë‹¨,ë³´í—˜ê¸°ê°„/ë‚©ì…ê¸°ê°„ë³„ ìƒì´)', '9ì¢…:100ì„¸ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)', '20,25,30ë…„ë‚©(ë‹¨,íŠ¹ì•½ë³„, ê°€ì…ì—°ë ¹ë³„ ìƒì´)', 'ì›”ë‚©', 'www.lotteinsumall.com/child.html?utm_source=google_pc&utm_medium=cpc&utm_campaign=jump&utm_term=%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAlBMkFawZiMrpmgcMoLsEloEYSSt95bBIGYpXe-ap9vwfRRUKU1uVcaAlHHEALw_wcB','letplayìë…€ë³´í—˜.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í˜„ëŒ€í•´ìƒ', '(ë¬´)êµ¿ì•¤êµ¿ì–´ë¦°ì´ì¢…í•©ë³´í—˜Q(Hi2201)(ì‹ ìƒì•„ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ ë³´ì¥)', '10,20,30,80,90,100ì„¸ ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)', '5ë…„,10ë…„,15ë…„,20ë…„,30ë…„ë‚©,ì „ê¸°ë‚©,ì¼ì‹œë‚©(íŠ¹ì•½ë³„ ìƒì´)', 'ì›”ë‚©', 'www.hi.co.kr/serviceAction.do','êµ¿ì•¤êµ¿ì–´ë¦°ì´ì¢…í•©ë³´í—˜q_ì‹ ìƒì•„ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í˜„ëŒ€í•´ìƒ', '(ë¬´)êµ¿ì•¤êµ¿ ì–´ë¦°ì´ì¢…í•©ë³´í—˜Q(Hi2201)(ìë…€ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', '0ì„¸~14ì„¸', '10,20,30,80,90,100ì„¸ ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)', '5ë…„,10ë…„,15ë…„,20ë…„,25ë…„,30ë…„ë‚©,ì¼ì‹œë‚©(íŠ¹ì•½ë³„ ìƒì´)', 'ì›”ë‚©', 'www.hi.co.kr/serviceAction.do','êµ¿ì•¤êµ¿ì–´ë¦°ì´ì¢…í•©ë³´í—˜q_ìë…€ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ì‚¼ì„±í™”ì¬', '(ë¬´)ì‹¤ì†ì˜ë£Œë¹„ë³´í—˜(ì‹ ìƒì•„)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ë¶€í„° ë³´ì¥)', '1ë…„ë§Œê¸° (ë³´ì¥ë‚´ìš© ë³€ê²½ì£¼ê¸° : ìµœëŒ€ 5ë…„)', 'ì „ê¸°ë‚©', 'ì›”ë‚©','www.samsungfire.com/product/P_P02_03_04_075.html','ì‚¼ì„±ì‹¤ì†ì˜ë£Œë¹„ë³´í—˜_ì‹ ìƒì•„.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'ì‚¼ì„±í™”ì¬', '(ë¬´)ì‹¤ì†ì˜ë£Œë¹„ë³´í—˜(ìë…€)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ ë³´ì¥)~65ì„¸', '1ë…„ë§Œê¸° (ë³´ì¥ë‚´ìš© ë³€ê²½ì£¼ê¸° : ìµœëŒ€ 5ë…„)', 'ì „ê¸°ë‚©', 'ì›”ë‚©,3ê°œì›”ë‚©,6ê°œì›”ë‚©,ì—°ë‚©','www.samsungfire.com/product/P_P02_03_04_075.html','ì‚¼ì„±ì‹¤ì†ì˜ë£Œë¹„ë³´í—˜_ìë…€.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í•œí™”ì†í•´ë³´í—˜', 'LIFEPLUS ì²˜ìŒë¶€í„° í•¨ê»˜í•˜ëŠ” ìë…€ë³´í—˜2111(ê¸°ë³¸í˜•)(ìë…€í”Œëœ)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ì¼ë¶€ ê°±ì‹ ', '0ì„¸~30ì„¸(ë³´í—˜ê¸°ê°„ë³„,íŠ¹ì•½ë³„ ìƒì´)', '20,30,44,80,90,100ì„¸ ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)(ë‹¨, ê°±ì‹ ê³„ì•½ì€ 1ë…„,3ë…„ë§Œê¸° íŠ¹ì•½ë³„ ìƒì´)', '10,15,20,25,30ë…„ë‚©(íŠ¹ì•½ë³„ ìƒì´)(ë‹¨, ê°±ì‹ ê³„ì•½ê·¼ ì „ê¸°ë‚©)', 'ì›”ë‚©', 'www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01392002','lifeplusì²˜ìŒë¶€í„°í•¨ê»˜í•˜ëŠ”ìë…€ë³´í—˜_ìë…€í”Œëœ.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í•œí™”ì†í•´ë³´í—˜', 'LIFEPLUS ì²˜ìŒë¶€í„° í•¨ê»˜í•˜ëŠ” ìë…€ë³´í—˜2111(ê¸°ë³¸í˜•)(ì‹ ìƒì•„ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ê°±ì‹ ', 'íƒœì•„', '20,30,55,80,90,100ì„¸ ë§Œê¸°(ë‹¨,ì¼ë¶€íŠ¹ì•½ ìƒì´)', '10,15,20,25,30ë…„ë‚©(íŠ¹ì•½ë³„ìƒì´)(ë‹¨,ê°±ì‹ ê³„ì•½ì€ ì „ê¸°ë‚©)', 'ì›”ë‚©(ë‹¨,ì¼ë¶€íŠ¹ì•½ ì¼ì‹œë‚©)','www.hwgeneralins.com/product/catalog/product-info.do?insGdcd=LA01392002','lifeplusì²˜ìŒë¶€í„°í•¨ê»˜í•˜ëŠ”ìë…€ë³´í—˜_ì‹ ìƒì•„.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í¥êµ­í™”ì¬', '(ë¬´)í¥êµ­í™”ì¬ë§˜í¸í•œìë…€ì‚¬ë‘ë³´í—˜(22.01)(2ì¢…)(ì‹ ìƒì•„ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ë¶€í„° ë³´ì¥)', '80ì„¸,90ì„¸,100ì„¸ ë§Œê¸°', '10ë…„,15ë…„,20ë…„,25ë…„,30ë…„ë‚©', 'ì›”ë‚©', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=658#empty-ahchor','ë§˜í¸í•œìë…€ì‚¬ë‘ë³´í—˜_ì‹ ìƒì•„ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í¥êµ­í™”ì¬', '(ë¬´)í¥êµ­í™”ì¬ë§˜í¸í•œìë…€ì‚¬ë‘ë³´í—˜(22.04)(2ì¢…)(ìë…€ì¢…í•©í˜•)', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ë¹„ê°±ì‹ ', 'íƒœì•„(ì¶œìƒì´í›„ë¶€í„° ë³´ì¥)~ë§Œ30ì„¸', '80ì„¸,90ì„¸,100ì„¸ ë§Œê¸°(íŠ¹ì•½ë³„ ìƒì´)', '10ë…„,115ë…„,20ë…„,25ë…„,30ë…„ë‚©(íŠ¹ì•½ë³„ ìƒì´)', 'ì›”ë‚©', 'www.heungkukfire.co.kr/FRW/insurance/insGoods.do?seq=658#empty-ahchor','ë§˜í¸í•œìë…€ì‚¬ë‘ë³´í—˜_ìë…€ì¢…í•©í˜•.PNG');
+insert into insu(insu,insucompany,insuname,category,insutype,insuage,insuper,payper,paycyc,link,insuprice) values(insu_seq.nextval, 'í¥êµ­ìƒëª…', '(ë¬´)ë‹¤ì¬ë‹¤ëŠ¥ì–´ë¦°ì´ì¢…í•©ë³´í—˜', 'ì–´ë¦°ì´/íƒœì•„ ë³´í—˜', 'ì¼ë¶€ê°±ì‹ ', '0~30ì„¸', '1ì¢…:90ì„¸,100ì„¸ ë§Œê¸°/2ì¢…:30ì„¸,90ì„¸,100ì„¸ ë§Œê¸°', '20ë…„,30ë…„ë‚©', 'ì›”ë‚©', 'www.heungkuklife.co.kr/','ë¬¸ì˜.PNG');
 
 
 
 
 commit;
 
--- º¸Çè api ½ÃÄö½º
+-- ë³´í—˜ api ì‹œí€€ìŠ¤
 drop sequence bohum_seq;
 create sequence bohum_seq
    increment by 1
@@ -316,7 +299,7 @@ create sequence bohum_seq
      maxvalue 100000
      nocache;
 
--- º¸Çè api Å×ÀÌºí
+-- ë³´í—˜ api í…Œì´ë¸”
 
 drop table bohum cascade constraints;
 create table bohum (
@@ -332,21 +315,21 @@ create table bohum (
    fmlInsRt number
 );
 
--- È¸»ç Á¤º¸ ½ÃÄö½º
+-- íšŒì‚¬ ì •ë³´ ì‹œí€€ìŠ¤
 drop sequence cinfo_seq;
 create sequence cinfo_seq
    increment by 1
    start with 1
    nocache;
 
--- È¸»ç Á¤º¸ Å×ÀÌºí
+-- íšŒì‚¬ ì •ë³´ í…Œì´ë¸”
 
--- È¸»ç ½ÃÄö½º
--- È¸»ç¸í
--- »ç¾÷ÀÚ µî·Ï¹øÈ£
--- È¸»ç ·Î°í(ÀÌ¹ÌÁö ÆÄÀÏ)
--- È¸»ç º¸Çè (º¸Çè ½ÃÄö½ºµé)
--- È¸»ç °ü¸®ÀÚ ¾ÆÀÌµğ
+-- íšŒì‚¬ ì‹œí€€ìŠ¤
+-- íšŒì‚¬ëª…
+-- ì‚¬ì—…ì ë“±ë¡ë²ˆí˜¸
+-- íšŒì‚¬ ë¡œê³ (ì´ë¯¸ì§€ íŒŒì¼)
+-- íšŒì‚¬ ë³´í—˜ (ë³´í—˜ ì‹œí€€ìŠ¤ë“¤)
+-- íšŒì‚¬ ê´€ë¦¬ì ì•„ì´ë””
 
 drop table cinfo cascade constraints;
 create table cinfo(
@@ -358,37 +341,37 @@ create table cinfo(
    cadmin varchar2(30)
 );
 
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2028145617','»ï¼ºÈ­Àç', 'admin','http://www.samsungfire.com/', '»ï¼ºÈ­Àç1.jpg');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2018145593','DB¼ÕÇØº¸Çè', 'admin','http://www.idbins.com/FWMAIV0001.do', 'DB¼ÕÇØº¸Çè1.jpeg');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048629322','IBK¿¬±İ', 'admin','http://www.ibki.co.kr/process/HP_MAIN_FRAME', 'IBK¿¬±İº¸Çè1.PNG');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2028148370','KB¼ÕÇØº¸Çè', 'admin','http://www.kbinsure.co.kr/main.ec', 'KB¼ÕÇØº¸Çè1.png');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048639719','NH¼ÕÇØº¸Çè', 'admin','http://www.nhfire.co.kr/index.nhfire', 'NH¼ÕÇØº¸Çè1.PNG');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2208852643','MG¼ÕÇØº¸Çè', 'admin','http://www.mggeneralins.com/HO011010DM.scp', 'MG¼ÕÇØº¸Çè1.jpeg');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2028138251','µ¿¾ç»ı¸í', 'admin','http://www.myangel.co.kr/process/main', 'µ¿¾ç»ı¸í1.PNG');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1168103752','¸Ş¸®Ã÷È­Àç', 'admin','http://store.meritzfire.com/health-and-kids/total-care.do#!/', '¸Ş¸®Ã÷È­Àç1.png');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048118586','Èï±¹»ı¸í', 'admin','http://www.heungkuklife.co.kr/', 'Èï±¹»ı¸í1.PNG');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1028107837','Èï±¹È­Àç', 'admin','http://www.heungkukfire.co.kr/MAW/main1.do', 'Èï±¹È­Àç1.png');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1168146445','ÇÑÈ­¼ÕÇØº¸Çè', 'admin','http://www.hwgi.kr/main', 'ÇÑÈ­¼ÕÇØ1.png');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048185673','¶óÀÌ³ª»ı¸í', 'admin','http://www.lina.co.kr/main/main.htm', '¶óÀÌ³ª»ı¸í1.png');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048130770','·Ôµ¥¼ÕÇØº¸Çè', 'admin','http://www.lotteins.co.kr/web/main.jsp', '·Ôµ¥¼ÕÇØ1.png');
-insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1028132035','Çö´ëÇØ»óº¸Çè', 'admin','http://www.hi.co.kr/serviceAction.do', 'Çö´ëÇØ»ó1.png');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2028145617','ì‚¼ì„±í™”ì¬', 'admin','http://www.samsungfire.com/', 'ì‚¼ì„±í™”ì¬1.jpg');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2018145593','DBì†í•´ë³´í—˜', 'admin','http://www.idbins.com/FWMAIV0001.do', 'DBì†í•´ë³´í—˜1.jpeg');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048629322','IBKì—°ê¸ˆ', 'admin','http://www.ibki.co.kr/process/HP_MAIN_FRAME', 'IBKì—°ê¸ˆë³´í—˜1.PNG');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2028148370','KBì†í•´ë³´í—˜', 'admin','http://www.kbinsure.co.kr/main.ec', 'KBì†í•´ë³´í—˜1.png');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048639719','NHì†í•´ë³´í—˜', 'admin','http://www.nhfire.co.kr/index.nhfire', 'NHì†í•´ë³´í—˜1.PNG');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2208852643','MGì†í•´ë³´í—˜', 'admin','http://www.mggeneralins.com/HO011010DM.scp', 'MGì†í•´ë³´í—˜1.jpeg');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'2028138251','ë™ì–‘ìƒëª…', 'admin','http://www.myangel.co.kr/process/main', 'ë™ì–‘ìƒëª…1.PNG');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1168103752','ë©”ë¦¬ì¸ í™”ì¬', 'admin','http://store.meritzfire.com/health-and-kids/total-care.do#!/', 'ë©”ë¦¬ì¸ í™”ì¬1.png');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048118586','í¥êµ­ìƒëª…', 'admin','http://www.heungkuklife.co.kr/', 'í¥êµ­ìƒëª…1.PNG');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1028107837','í¥êµ­í™”ì¬', 'admin','http://www.heungkukfire.co.kr/MAW/main1.do', 'í¥êµ­í™”ì¬1.png');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1168146445','í•œí™”ì†í•´ë³´í—˜', 'admin','http://www.hwgi.kr/main', 'í•œí™”ì†í•´1.png');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048185673','ë¼ì´ë‚˜ìƒëª…', 'admin','http://www.lina.co.kr/main/main.htm', 'ë¼ì´ë‚˜ìƒëª…1.png');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1048130770','ë¡¯ë°ì†í•´ë³´í—˜', 'admin','http://www.lotteins.co.kr/web/main.jsp', 'ë¡¯ë°ì†í•´1.png');
+insert into cinfo(cnum,cregi_num, cname, cadmin,clink,cimage) values(cinfo_seq.nextval,'1028132035','í˜„ëŒ€í•´ìƒë³´í—˜', 'admin','http://www.hi.co.kr/serviceAction.do', 'í˜„ëŒ€í•´ìƒ1.png');
 commit;
--- °³ÀÎ Á¤º¸ Å×ÀÌºí
+-- ê°œì¸ ì •ë³´ í…Œì´ë¸”
 
 -- id 
 -- pw    
--- ÀÌ¸§                  
--- ÁÖ¹Î¹øÈ£(¾ÕÀÚ¸®)              
--- ÁÖ¹Î¹øÈ£(µŞÀÚ¸®)           
--- ÈŞ´ëÆù¹øÈ£1              
--- ÈŞ´ë¹øÈ£2               
--- ÈŞ´ë¹øÈ£3             
--- ÀÌ¸ŞÀÏ1
--- ÀÌ¸ŞÀÏ2          
--- »ç¾÷ÀÚµî·Ï¹øÈ£
--- È¸¿ø Å¸ÀÔ(ÇÇº¸ÇèÀÚ  °ü¸®ÀÚ º¸Çè»çÁ÷¿ø)      
--- È¸¿ø ¼¼ºÎ Á¤º¸(´Ù¸¥ Å×ÀÌºí°ú ¿¬°á µÉ °ÍÀÓ)
--- º¸Çè»ç(È¸»ç ½ÃÄö½º¶û ¿¬°á)
+-- ì´ë¦„                  
+-- ì£¼ë¯¼ë²ˆí˜¸(ì•ìë¦¬)              
+-- ì£¼ë¯¼ë²ˆí˜¸(ë’·ìë¦¬)           
+-- íœ´ëŒ€í°ë²ˆí˜¸1              
+-- íœ´ëŒ€ë²ˆí˜¸2               
+-- íœ´ëŒ€ë²ˆí˜¸3             
+-- ì´ë©”ì¼1
+-- ì´ë©”ì¼2          
+-- ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸
+-- íšŒì› íƒ€ì…(í”¼ë³´í—˜ì  ê´€ë¦¬ì ë³´í—˜ì‚¬ì§ì›)      
+-- íšŒì› ì„¸ë¶€ ì •ë³´(ë‹¤ë¥¸ í…Œì´ë¸”ê³¼ ì—°ê²° ë  ê²ƒì„)
+-- ë³´í—˜ì‚¬(íšŒì‚¬ ì‹œí€€ìŠ¤ë‘ ì—°ê²°)
 
 drop table members cascade constraints;
 create table members(
@@ -402,27 +385,11 @@ create table members(
    phone3 number,
    email1 varchar2(20),
    email2 varchar2(30),
-   userState varchar2(20) default 'ÀÏ¹İ'  check(userState in('ÀÏ¹İ','È¸»ç','°ü¸®ÀÚ')),
+   userState varchar2(20) default 'ì¼ë°˜'  check(userState in('ì¼ë°˜','íšŒì‚¬','ê´€ë¦¬ì')),
    userDetail number not null,
    companyInfo number default 0,
    cname varchar2(20)
 );
-
--- ÀÏ¹İ 2¸í
-insert into members(id, password, name, regi_number1, regi_number2, phone1, phone2, phone3, email1, email2, userState, userDetail)
-values('kim','1234','±è¿¬¾Æ',900101,2000000,010,111,1111,'kim12@','google.com','ÀÏ¹İ',100);
-
-insert into members(id, password, name, regi_number1, regi_number2, phone1, phone2, phone3, email1, email2, userState, userDetail)
-values('park','1234','¹Ú¼¼¸®',801212,2111111,010,222,2222,'park34@','naver.com','ÀÏ¹İ',101);
-
--- º¸Çè»ç Á÷¿ø
-insert into members(id, password, name, regi_number1, regi_number2, phone1, phone2, phone3, email1, email2, userState, userDetail,cname)
-values('son','1234','¼ÕÈï¹Î',950401,1111111,010,333,3333,'sonson@','naver.com','È¸»ç',200,'»ï¼ºÈ­Àç');
-
--- °ü¸®ÀÚ
-insert into members(id, password, userState, userDetail)
-values('admin','1234','°ü¸®ÀÚ',300);
--- °³ÀÎ Á¤º¸ µğÅ×ÀÏ ½ÃÄö½º
 
 drop sequence userDetails_seq;
 create sequence userDetails_seq
@@ -432,23 +399,39 @@ create sequence userDetails_seq
   maxvalue 10000
   nocache;
 
+-- ì¼ë°˜ 2ëª…
+insert into members(id, password, name, regi_number1, regi_number2, phone1, phone2, phone3, email1, email2, userState, userDetail)
+values('kim','1234','ê¹€ì—°ì•„',900101,2000000,010,111,1111,'kimgyhye000','gmail.com','ì¼ë°˜',userDetails_seq.nextval);
+
+insert into members(id, password, name, regi_number1, regi_number2, phone1, phone2, phone3, email1, email2, userState, userDetail)
+values('park','1234','ë°•ì„¸ë¦¬',801212,2111111,010,222,2222,'park34','naver.com','ì¼ë°˜',userDetails_seq.nextval);
+
+-- ë³´í—˜ì‚¬ ì§ì›
+insert into members(id, password, name, regi_number1, regi_number2, phone1, phone2, phone3, email1, email2, userState, userDetail,cname)
+values('son','1234','ì†í¥ë¯¼',950401,1111111,010,333,3333,'sonson','naver.com','íšŒì‚¬',userDetails_seq.nextval,'í¥êµ­í™”ì¬');
+
+-- ê´€ë¦¬ì
+insert into members(id, password, userState, userDetail)
+values('admin','1234','ê´€ë¦¬ì',userDetails_seq.nextval);
+-- ê°œì¸ ì •ë³´ ë””í…Œì¼ ì‹œí€€ìŠ¤
+
 
 insert into members(id, password, name,userDetail,email1 ,email2 ,regi_number1  ,regi_number2,phone1, phone2, phone3) 
-values('kim01','1234','±è°æÇı',userDetails_seq.nextval,'kimgyhye','@naver.com',960911,2000000,010,5519,3779);
+values('kim01','1234','ê¹€ê²½í˜œ',userDetails_seq.nextval,'kimgyhye','naver.com',960911,2000000,010,5519,3779);
 
 
 commit;
 
--- À¯Àú »óÁ¦ Á¤º¸ Å×ÀÌºí
+-- ìœ ì € ìƒì œ ì •ë³´ í…Œì´ë¸”
 
 DROP TABLE userDetails CASCADE CONSTRAINTS;
 create table userDetails(
    num number primary key,
    age number not null,
-   gender varchar2(30)  default '³²ÀÚ' check(gender in('³²ÀÚ','¿©ÀÚ')),  
+   gender varchar2(30)  default 'ë‚¨ì' check(gender in('ë‚¨ì','ì—¬ì')),  
    job varchar2(30) not null,
    salary number,
-   marriage varchar2(20) default '¹ÌÈ¥' check(marriage  in('¹ÌÈ¥','±âÈ¥')),   
+   marriage varchar2(20) default 'ë¯¸í˜¼' check(marriage  in('ë¯¸í˜¼','ê¸°í˜¼')),   
    height number,
    weight number,
    disease varchar2(100),
@@ -456,31 +439,144 @@ create table userDetails(
 );
 
 insert into userDetails(num,age,gender,job,disease ,family_history ) 
-values(3,27,'¿©ÀÚ','ºí·çÄ®¶ó','Ãµ½Ä','°íÇ÷¾Ğ');
+values(5,27,'ì—¬ì','ë¸”ë£¨ì¹¼ë¼','ì²œì‹','ê³ í˜ˆì••');
 
 insert into userDetails(num,age,gender,job,disease ,family_history ) 
-values(5,23,'³²ÀÚ','ºí·çÄ®¶ó','Ãµ½Ä','°íÇ÷¾Ğ');
+values(4,23,'ë‚¨ì','ë¸”ë£¨ì¹¼ë¼','ì²œì‹','ê³ í˜ˆì••');
 
 
 commit;
 
 
--- Âò Å×ÀÌºí
+-- ì°œ í…Œì´ë¸”
 
 drop table heart cascade constraints;
 create table heart(
    mid varchar2(30),
-   insu_num number references insu(insu),
+   insu_num number references insu(insu) on delete cascade ,
    heartdate date default sysdate
 );
 
-insert into heart(mid, insu_num,heartdate) values('kim', 1,'2022-04-17');
-insert into heart(mid, insu_num,heartdate) values('son', 1,'2022-04-18');
-insert into heart(mid, insu_num,heartdate) values('park', 1,'2022-04-19');
-insert into heart(mid, insu_num,heartdate) values('kim01', 2,'2022-04-19');
-insert into heart(mid, insu_num) values('kim01', 3);
-insert into heart(mid, insu_num) values('kim', 2);
-insert into heart(mid, insu_num) values('kim01', 1);
-insert into heart(mid, insu_num) values('park', 3);
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-20');
+
+
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-21');
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('admin', 23,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-22');
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-23');
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('admin', 23,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-24');
+
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 23,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-25');
+
+
+insert into heart(mid, insu_num,heartdate) values('son', 1,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 15,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 23,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 29,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 30,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 45,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 46,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 11,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 25,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 24,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 2,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 3,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 4,'2022-04-26');
+insert into heart(mid, insu_num,heartdate) values('son', 6,'2022-04-26');
+
+insert into heart(mid, insu_num,heartdate) values('kim', 1,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('kim', 15,'2022-04-19');
+insert into heart(mid, insu_num,heartdate) values('kim', 23,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('kim', 29,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('kim', 30,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('kim', 45,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('kim', 46,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('kim', 14,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('kim', 25,'2022-04-19');
+insert into heart(mid, insu_num,heartdate) values('kim', 24,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('kim', 2,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('kim', 3,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('kim', 4,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('kim', 6,'2022-04-25');
+
+
+insert into heart(mid, insu_num,heartdate) values('kim01', 1,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('kim01', 15,'2022-04-19');
+insert into heart(mid, insu_num,heartdate) values('kim01', 23,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('kim01', 28,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('kim01', 10,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('kim01', 45,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('kim01', 46,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('kim01', 14,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('kim01', 25,'2022-04-19');
+insert into heart(mid, insu_num,heartdate) values('kim01', 24,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('kim01', 2,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('kim01', 35,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('kim01', 4,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('kim01', 6,'2022-04-25');
+
+
+insert into heart(mid, insu_num,heartdate) values('park', 1,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('park', 15,'2022-04-19');
+insert into heart(mid, insu_num,heartdate) values('park', 23,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('park', 28,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('park', 10,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('park', 45,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('park', 46,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('park', 14,'2022-04-20');
+insert into heart(mid, insu_num,heartdate) values('park', 25,'2022-04-19');
+insert into heart(mid, insu_num,heartdate) values('park', 22,'2022-04-21');
+insert into heart(mid, insu_num,heartdate) values('park', 2,'2022-04-22');
+insert into heart(mid, insu_num,heartdate) values('park', 35,'2022-04-23');
+insert into heart(mid, insu_num,heartdate) values('park', 4,'2022-04-24');
+insert into heart(mid, insu_num,heartdate) values('park', 5,'2022-04-25');
+
+
+insert into heart(mid, insu_num,heartdate) values('admin', 36,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 37,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 38,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 39,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 40,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 41,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 42,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 43,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 44,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-25');
+insert into heart(mid, insu_num,heartdate) values('admin', 47,'2022-04-25');
 
 commit;
+
+--'(ë¬´)í¥êµ­í™”ì¬ë§˜í¸í•œìë…€ì‚¬ë‘ë³´í—˜(22.01)(2ì¢…)(ì‹ ìƒì•„ì¢…í•©í˜•)'

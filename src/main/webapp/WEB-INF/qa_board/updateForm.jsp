@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/member/top.jsp" %>
+<br><br>
 <style>
    .table{
       width:80%;
@@ -80,10 +81,11 @@
       </td>
    </tr>
    <tr>
-      <td colspan="2" align="center" class="table-light">
-         <input type="submit" value="글수정" class="btn btn-dark"> 
-         <input type="reset" value="다시작성" class="btn btn-dark"> 
-         <input type="button" value="글목록" class="btn btn-dark" onClick="location.href='list.qa?pageNumber=${pageNumber}'">
+   <td class="table-light"></td>
+      <td  align="center" class="table-light">
+         <input type="submit" value="글수정" class="btn btn-success"> 
+         <input type="reset" value="다시작성" class="btn btn-success"> 
+         <input type="button" value="글목록" class="btn btn-success" onClick="location.href='list.qa?pageNumber=${pageNumber}'">
       </td>
    </tr>
 </table>
