@@ -3,7 +3,19 @@
 <%@include file="../common/common.jsp" %>   
 <%@ include file="top.jsp"%>
 
-<!DOCTYPE html>
+<script>
+function delRight(myBohumNum) { 
+   var a=confirm("보험 상품을 삭제 하시겠습니까?");
+   if (a == true){    //확인
+      location.href="bohumDelete.bh?insu="+myBohumNum;
+   }else{   //취소<td><a href="companyDelete.cp?cnum=${company.cnum }">삭제</a></td>
+
+       return false;
+
+   }
+   }
+</script>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -17,17 +29,18 @@
 <body class="bg-light">
 <br>
 <div class="container">
-<form action="list.bh">
-	<input type="submit" class="btn btn-outline-success" value="검색" style="float: right; height: 30px;">
-	<input type="text" class="form-control" name="keyword" style="width:200px; height: 30px; float: right">
-	<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="whatColumn" style="width: 105px; float: right">
-		<option name="all">전체 검색</option>
-		<option name="bname">보험명</option>
-		<option name="bcate">카테고리</option>
+<form action="list.bh" method="get">
+	<input type="submit" class="btn btn-success" value="검색" style="float: right;">
+	<input type="text" class="form-control" name="keyword" style="width:200px; float: right">
+	<select class="form-select form-select" aria-label=".form-select-sm example" name="whatColumn" style="width: 150px; float: right">
+		<option value="all">전체 검색</option>
+		<option value="bname">보험명</option>
+		<option value="bcate">카테고리</option>
 	</select>
+
 <br><br>
 <table class="table table-hover">
-<caption>(로그인한 회사 이름) 총 ${total}건</caption>
+<caption>${loginCompany }: 총 ${total2}건</caption>
   <thead>
     <tr align="center">
       <th scope="col">번호</th>
@@ -40,17 +53,19 @@
       <th scope="col">납입 기간</th>
       <th scope="col">납입 주기</th>
       <th scope="col">특약 가입</th>
+      <th scope="col">수정</th>
+      <th scope="col">삭제</th>
     </tr>
   </thead>
   <tbody align="center">
-<c:forEach var="bh" items="${lists }">
+<c:forEach var="bh" items="${getList }">
     <tr align="center">
       <th scope="row">${bh.insu }</th>
-      <td>${bh.insuname }</td>
-      <td>${bh.insucate }</td>
+      <td><a href="http://${bh.link }">${bh.insuname }</a></td>
+      <td>${bh.category }</td>
       <td>${bh.insutype }</td>
       <%
-      String imgPath = request.getContextPath()+"/resources/";
+      String imgPath = request.getContextPath()+"/resources/insuprice/";
       %>
       <td><img src="<%=imgPath %>${bh.insuprice }" width="200" height="100"></td>
       <td>${bh.insuage }</td>
@@ -58,13 +73,16 @@
       <td>${bh.payper }</td>
       <td>${bh.paycyc }</td>
       <td>${bh.spccont }</td>
+      <td><a class="btn btn-sm" href="bohumUpdate.bh?insu=${bh.insu}">수정</a></td>
+      <input type="hidden" name="cnum" value="${company.cnum }" readOnly>
+      <td><a class="btn btn-sm" href="javascript:delRight('${bh.insu}')">삭제</a></td>
     </tr>
 </c:forEach>
   </tbody>
 </table>
-</form>
-${pageInfo.pagingHtml }
+${pageInfo2.pagingHtml }
 </div>
+</form>
 </center>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

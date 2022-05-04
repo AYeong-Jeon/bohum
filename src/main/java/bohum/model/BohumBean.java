@@ -6,7 +6,7 @@ public class BohumBean {
 	private int insu;
 	private String insucompany;
 	private String insuname;
-	private String insucate;
+	private String category;
 	private String insutype;
 	private String insuprice;
 	private String insuage;
@@ -16,13 +16,26 @@ public class BohumBean {
 	private String maincont;
 	private String spccont;
 	private MultipartFile image;
+	private String link;
+	private String image2;
 	
+	public String getImage2() {
+		return image2;
+	}
+	public void setImage2(String image2) {
+		this.image2 = image2;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
 	public MultipartFile getImage() {
 		return image;
 	}
 	public void setImage(MultipartFile image) {
 		this.image = image;
-		System.out.println("image : "+image);
 		insuprice = image.getOriginalFilename();
 	}
 	
@@ -44,11 +57,11 @@ public class BohumBean {
 	public void setInsuname(String insuname) {
 		this.insuname = insuname;
 	}
-	public String getInsucate() {
-		return insucate;
+	public String getCategory() {
+		return category;
 	}
-	public void setInsucate(String insucate) {
-		this.insucate = insucate;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public String getInsutype() {
 		return insutype;

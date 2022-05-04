@@ -23,21 +23,17 @@ public class Paging {
 		return totalCount;
 	}
 
-
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
 	}
-
 
 	public int getTotalPage() {
 		return totalPage;
 	}
 
-
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
 	}
-
 
 	public int getPageNumber() {
 		return pageNumber;
@@ -48,129 +44,102 @@ public class Paging {
 		this.pageNumber = pageNumber;
 	}
 
-
 	public int getPageSize() {
 		return pageSize;
 	}
-
 
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
 
-
 	public int getBeginRow() {
 		return beginRow;
 	}
-
 
 	public void setBeginRow(int beginRow) {
 		this.beginRow = beginRow;
 	}
 
-
 	public int getEndRow() {
 		return endRow;
 	}
-
 
 	public void setEndRow(int endRow) {
 		this.endRow = endRow;
 	}
 
-
 	public int getPageCount() {
 		return pageCount;
 	}
-
 
 	public void setPageCount(int pageCount) {
 		this.pageCount = pageCount;
 	}
 
-
 	public int getBeginPage() {
 		return beginPage;
 	}
-
 
 	public void setBeginPage(int beginPage) {
 		this.beginPage = beginPage;
 	}
 
-
 	public int getEndPage() {
 		return endPage;
 	}
-
 
 	public void setEndPage(int endPage) {
 		this.endPage = endPage;
 	}
 
-
 	public int getOffset() {
 		return offset;
 	}
-
 
 	public void setOffset(int offset) {
 		this.offset = offset;
 	}
 
-
 	public int getLimit() {
 		return limit;
 	}
-
 
 	public void setLimit(int limit) {
 		this.limit = limit;
 	}
 
-
 	public String getUrl() {
 		return url;
 	}
-
 
 	public void setUrl(String url) {
 		this.url = url;
 	}
 
-
 	public String getPagingHtml() {
 		System.out.println("pagingHtml:"+pagingHtml);
-		
 		return pagingHtml;
-
 	}
-
 
 	public void setPagingHtml(String pagingHtml) {
 		this.pagingHtml = pagingHtml;
 	}
 
-
 	public String getWhatColumn() {
 		return whatColumn;
 	}
-
 
 	public void setWhatColumn(String whatColumn) {
 		this.whatColumn = whatColumn;
 	}
 
-
 	public String getKeyword() {
 		return keyword;
 	}
 
-
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
-
 
 	public Paging(
 			String _pageNumber, 
@@ -228,31 +197,35 @@ public class Paging {
 		this.pagingHtml = getPagingHtml(url) ;
 	
 	}
+	
 	private String getPagingHtml( String url ){ //페이징 문자열을 만든다.
 		System.out.println("getPagingHtml url:"+url); 
 		
-		String result = "" ;
+		String result = "<div class=\"container\" >"
+				+ "<nav aria-label=\"Page navigation example\">"
+				+ "<ul class=\"pagination justify-content-center\">" ;
 		String added_param = "&whatColumn=" + whatColumn + "&keyword=" + keyword ; // &whatColumn=singer&keyword=아
 		
 		if (this.beginPage != 1) { // 앞쪽, pageSize:한 화면에 보이는 레코드 수
-			result += "&nbsp;<a href='" + url  
+			result += "&nbsp;<li class=\"page-item\"><a class=\"page-link\" href='" + url  
 					+ "?pageNumber=" + ( 1 ) + "&pageSize=" + this.pageSize 
-					+ added_param + "'>맨 처음</a>&nbsp;" ;
-			result += "&nbsp;<a href='" + url 
+					+ added_param + "'><span aria-hidden=\"true\">&laquo;</span></a></li>&nbsp;" ;
+			result += "&nbsp;<li class=\"page-item\"><a class=\"page-link\"  href='" + url 
 					+ "?pageNumber=" + (this.beginPage - 1 ) + "&pageSize=" + this.pageSize 
-					+ added_param + "'>이전</a>&nbsp;" ;
+					+ added_param + "'><span aria-hidden=\"true\">&lt;</span></a></li>&nbsp;" ;
 		}
 		
 		//가운데
 		for (int i = this.beginPage; i <= this.endPage ; i++) {
 			if ( i == this.pageNumber ) {
-				result += "&nbsp;<font color='red'>" + i + "</font>&nbsp;"	;
+				result += "&nbsp;<li class=\"page-item\"><a class=\"page-link\" href='" + url   
+						+ "?pageNumber=" + i + "&pageSize=" + this.pageSize 
+						+ added_param + "'><font color='red'>" + i + "</font></a></li>&nbsp;" ;
 						
 			} else {
-				result += "&nbsp;<a href='" + url   
+				result += "&nbsp;<li class=\"page-item\"><a class=\"page-link\" href='" + url   
 						+ "?pageNumber=" + i + "&pageSize=" + this.pageSize 
-						+ added_param + "'>" + i + "</a>&nbsp;" ;
-				
+						+ added_param + "'>" + i + "</a></li>&nbsp;" ;
 			}
 		}
 		System.out.println("result:"+result); 
@@ -260,16 +233,19 @@ public class Paging {
 		
 		if ( this.endPage != this.totalPage) { // 뒤쪽
 			
-			result += "&nbsp;<a href='" + url  
+			result += "&nbsp;<li class=\"page-item\"><a class=\"page-link\" href='" + url  
 					+ "?pageNumber=" + (this.endPage + 1 ) + "&pageSize=" + this.pageSize 
-					+ added_param + "'>다음</a>&nbsp;" ;
+					+ added_param + "'><span aria-hidden=\"true\">&gt;</span></a></li>&nbsp;" ;
 			
-			result += "&nbsp;<a href='" + url  
+			result += "&nbsp;<li class=\"page-item\"><a class=\"page-link\" href='" + url  
 					+ "?pageNumber=" + (this.totalPage ) + "&pageSize=" + this.pageSize 
-					+ added_param + "'>맨 끝</a>&nbsp;" ;
+					+ added_param + "'><span aria-hidden=\"true\">&raquo;</span></a></li>&nbsp;" ;
 		}		
 		System.out.println("result2:"+result);
-		
+		result += "</ul>"
+				+ "</nav>"
+				+ "</div>";
+
 		return result ;
 	}
 

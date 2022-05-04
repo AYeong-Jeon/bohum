@@ -9,7 +9,7 @@ import bohum.model.BohumDao;
 
 @Controller
 public class MemberMainController {
-	private final String command = "/main.mb";
+	private final String command = "/main.mem";
 	private String getPage = "Main";
 	
 	@RequestMapping(command)
