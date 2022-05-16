@@ -33,6 +33,7 @@ public class BohumDataDetailController {
 			HttpServletRequest request,
 			HttpSession session) {
 		//cmpyNm=${test.cmpyNm }&ptrn=${test.ptrn }&prdNm=${test.prdNm }
+		
 		System.out.println("(bohumTestBean.getCmpyNm()"+bohumTestBean.getCmpyNm());
 		List<BohumDataBean> bohumDataDetailInfoArr = bohumDao.selectBohumDetail(bohumTestBean);
 		request.setAttribute("bohumDataDetailInfoArr",bohumDataDetailInfoArr);
