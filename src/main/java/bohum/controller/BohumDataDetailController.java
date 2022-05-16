@@ -23,7 +23,6 @@ import utility.Responsing;
 @Controller
 public class BohumDataDetailController {
 	private final String command = "/bohumDataDetail.bh";
-	//이름 꼭 바꾸기!!
 	private String getPage = "/bohumDetailInfo";
 	
 	@Autowired

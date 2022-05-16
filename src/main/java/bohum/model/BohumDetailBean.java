@@ -10,11 +10,11 @@ public class BohumDetailBean {
 	private String prdNm;
 	private String mlInsRt;
 	private String fmlInsRt; 
-	private String priceSum;	//�뿬�옄/�궓�옄 蹂댄뿕猷� �뜑�븳嫄�
-	private String mogCount;	//�듅�빟 媛��닔
-	private String cimage;		//cinfo�쓽 �씠誘몄�
-	private String maincont;		//
-	private String link;		//link
+	private String priceSum;	
+	private String mogCount;	
+	private String cimage;		// cinfo 이미지
+	private String maincont;	
+	private String link;		// 보험 link
 	public BohumDetailBean() {
 		super();
 	}

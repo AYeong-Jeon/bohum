@@ -68,7 +68,7 @@ public class BohumDataJujangController {
       System.out.println("deleteCount"+deleteCount);
       
       if(whatColumn==null)whatColumn="";
-      if(keyword==null)keyword="";         //처리 어떻게 하지..?
+      if(keyword==null)keyword="";
       
       Map<String,String> map = new HashMap<String, String>();
       map.put("whatColumn", whatColumn);
