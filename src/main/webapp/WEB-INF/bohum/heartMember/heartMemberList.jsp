@@ -249,13 +249,18 @@
 
 				<tbody>
 					<c:forEach var="heartMember" items="${heartMemberList }">
+					<c:if test="${heartMember.mid!='admin' }">
+					<fmt:formatNumber var="formatPhone1" value="${heartMember.phone1}" pattern="000"/>
+					<fmt:formatNumber var="formatPhone2" value="${heartMember.phone2}" pattern="0000"/>
+					<fmt:formatNumber var="formatPhone3" value="${heartMember.phone3}" pattern="0000"/>
 						<tr style="height: 45px;" align="center">
 							<td>${heartMember.insuname }</td>
 							<td>${heartMember.mid }</td>
 							<td>${heartMember.name }</td>
-							<td>${heartMember.phone1 }${heartMember.phone2 }${heartMember.phone3 }</td>
+							<td>${formatPhone1 }-${formatPhone2 }-${formatPhone3 }</td>
 							<td>${heartMember.email1 }@${heartMember.email2 }</td>
 						</tr>
+					</c:if>
 					</c:forEach>
 				</tbody>
 			</table>

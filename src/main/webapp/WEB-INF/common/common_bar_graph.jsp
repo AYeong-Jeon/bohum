@@ -26,7 +26,7 @@
 		var reDiv = "#"+myDiv;
 		// 내가 작성할 차트의 캔버스 초기화
 		// 차트는 캔버스를 통해 작성이 됨
-		$(reDiv).html("<div style='position: relative; width:800px; height:500px;'><canvas id='bar-chart-"+myDiv+"' class='form-control' ></canvas></div>");
+		$(reDiv).html("<div style='position: relative; width:800px; height:500px;  margin: auto;'><canvas id='bar-chart-"+myDiv+"' class='form-control' ></canvas></div>");
 	}
 	
 	function drawBarGraph(myDiv,myLabels,myLabel,myData,myText) {

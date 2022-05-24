@@ -17,7 +17,7 @@
             <td align="center">${ qA_BoardBean.readcount }</td>
          </tr>
          <tr>
-            <td align="center" class="table-light">작성자</td>
+            <td align="center" class="table-light">고객아이디</td>
             <td align="center">${ qA_BoardBean.writer }</td>
             <td align="center" class="table-light">작성일</td>
             <td align="center">

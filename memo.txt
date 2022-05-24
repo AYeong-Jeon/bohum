@@ -577,6 +577,155 @@ insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-04-25');
 insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-04-25');
 insert into heart(mid, insu_num,heartdate) values('admin', 47,'2022-04-25');
 
+
+
+
 commit;
+
+
+
+
+insert into heart(mid, insu_num,heartdate) values('admin', 36,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 37,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 38,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 39,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 40,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 41,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 42,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 43,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 44,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('admin', 47,'2022-05-18');
+
+
+insert into heart(mid, insu_num,heartdate) values('admin', 36,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 37,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 38,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 39,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 40,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 41,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 42,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 43,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 44,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('admin', 47,'2022-05-19');
+
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-05-13');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-05-13');
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-05-13');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-05-13');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-05-13');
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-05-14');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-05-14');
+insert into heart(mid, insu_num,heartdate) values('admin', 23,'2022-05-14');
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-05-14');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-05-14');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-05-14');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-05-14');
+
+
+insert into heart(mid, insu_num,heartdate) values('admin', 1,'2022-05-15');
+insert into heart(mid, insu_num,heartdate) values('admin', 15,'2022-05-15');
+insert into heart(mid, insu_num,heartdate) values('admin', 23,'2022-05-15');
+insert into heart(mid, insu_num,heartdate) values('admin', 29,'2022-05-15');
+insert into heart(mid, insu_num,heartdate) values('admin', 30,'2022-05-15');
+insert into heart(mid, insu_num,heartdate) values('admin', 45,'2022-05-15');
+insert into heart(mid, insu_num,heartdate) values('admin', 46,'2022-05-15');
+
+
+insert into heart(mid, insu_num,heartdate) values('son', 1,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 15,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 23,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 29,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 30,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 45,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 46,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 11,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 25,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 24,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 2,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 3,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 4,'2022-05-16');
+insert into heart(mid, insu_num,heartdate) values('son', 6,'2022-05-16');
+
+
+
+--
+insert into heart(mid, insu_num,heartdate) values('son', 1,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 15,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 23,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 29,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 30,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 45,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 46,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 11,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 25,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 24,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 2,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 3,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 4,'2022-05-17');
+insert into heart(mid, insu_num,heartdate) values('son', 6,'2022-05-17');
+
+insert into heart(mid, insu_num,heartdate) values('son', 1,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 15,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 23,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 29,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 30,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 45,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 46,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 11,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 25,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 24,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 2,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 3,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 4,'2022-05-18');
+insert into heart(mid, insu_num,heartdate) values('son', 6,'2022-05-18');
+
+insert into heart(mid, insu_num,heartdate) values('son', 1,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 15,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 23,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 29,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 30,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 45,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 46,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 11,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 25,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 24,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 2,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 3,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 4,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('son', 6,'2022-05-19');
+
+insert into heart(mid, insu_num,heartdate) values('park', 1,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 15,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 23,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 29,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 30,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 45,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 46,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 11,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 25,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 24,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 2,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 3,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 4,'2022-05-19');
+insert into heart(mid, insu_num,heartdate) values('park', 6,'2022-05-19');
+
+commit;
+
+
+
+
+
+
+
+
+
+
+
 
 --'(무)흥국화재맘편한자녀사랑보험(22.01)(2종)(신생아종합형)'

@@ -33,12 +33,15 @@ public class GraphDataAgeNBohumController {
 			HttpServletResponse response) {
 		System.out.println(command);
 		
+		//GraphBean으로 x축, y축 값을 뽑아 옴 (sql 별칭 사용해서)
 		List<GraphBean> graphDataAgeNBohum = new ArrayList<GraphBean>();
 		graphDataAgeNBohum = graphDao.getGraphDataAgeNBohum();
 
 		System.out.println("graphDataAgeNBohum.size() : "+graphDataAgeNBohum.size());
 		GraphJsonBean graphJsonBean = new GraphJsonBean(graphDataAgeNBohum);
 		
+		// 지금은 딱히 jsonArray일 필요는 없는데 나중에 한번에 여러 그래프 사용할 때는 array여야함
+		// json에 형식에 맞추어서 값 넣어 준거 (옛날에 보내준 ppt참고)
 		JSONArray jsonArray = new JSONArray();
 		JSONObject json = new JSONObject();
 		json.put("myLabels", graphJsonBean.getMyLabels());

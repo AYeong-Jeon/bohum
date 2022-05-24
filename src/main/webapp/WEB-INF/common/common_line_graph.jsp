@@ -4,7 +4,7 @@
 	function removeLineGraph(myDiv) {
 //		alert('removeLineGraph');
 		var reDiv = "#"+myDiv;
-		$(reDiv).html("<div style='position: relative; width:800px; height:500px;'><canvas id='line-chart-"+myDiv+"' ></canvas></div>");
+		$(reDiv).html("<div style='position: relative; width:800px; height:500px;  margin: auto;'><canvas id='line-chart-"+myDiv+"' ></canvas></div>");
 	}
 	function drawLineGraph(myDiv,myLabels,myLabel,myData,myText) {
 //		alert('drawLineGraph');

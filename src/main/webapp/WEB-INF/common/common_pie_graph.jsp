@@ -4,7 +4,7 @@
 	function removePieGraph(myDiv) {
 //		alert('removePieGraph');
 		var reDiv = "#"+myDiv;
-		$(reDiv).html("<div style='position: relative; width:500px; height:500px; '><canvas id='pie-chart-"+myDiv+"'></canvas></div>");
+		$(reDiv).html("<div style='position: relative; width:500px; height:500px;  margin: auto; '><canvas id='pie-chart-"+myDiv+"'></canvas></div>");
 //		alert('removeEnd');
 	}
 	

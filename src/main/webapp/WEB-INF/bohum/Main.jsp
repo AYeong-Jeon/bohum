@@ -100,6 +100,7 @@
 								}
 							}
 						}
+						alert("a : "+a);
 						var context = document.getElementById('myChart1').getContext('2d');
 						var myChart1 = new Chart(context, {
 							type : 'line', // 차트의 형태
@@ -115,7 +116,7 @@
 									data : 
 										// y 축
 										[
-										g,f,e,d,c,b,a
+										g,f,e,d,c,b,a+10
 										/* 1,2,3,4,5,6,7 */
 									],
 									backgroundColor : [

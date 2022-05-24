@@ -49,6 +49,7 @@ public class BohumDataJujangController {
          BohumDetail bohumDetail = new BohumDetail();
          ArrayList<BohumDataBean> bohumTestInfoArr = new ArrayList<BohumDataBean>();
          int count = 0;
+         //10대부터~ 100대까지
          for(int j=10;j<101;j=j+10) {
             bohumTestInfoArr = bohumDetail.getHohumDetail(String.valueOf(j));
             System.out.println("j"+j);
@@ -64,6 +65,7 @@ public class BohumDataJujangController {
          System.out.println("저장 갯수 : "+count);
       }
       
+      // 누락되거나 여자/남자 보험금액 0인 데이터(필요없는거) 삭제
       int deleteCount = bohumDao.deleteTrashData();
       System.out.println("deleteCount"+deleteCount);
       
